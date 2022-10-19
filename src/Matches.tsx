@@ -1,7 +1,8 @@
-import {useCallback, useRef, useState} from "react";
+import {CSSProperties, useCallback, useRef, useState} from "react";
 import useMatches from "./hooks/useMatches";
 import Match from "./Match";
 import {convertToDateStr} from "./utils/utils";
+import {PuffLoader} from "react-spinners";
 
 const Matches = () => {
     const [offset, setOffset] = useState(0);
@@ -12,6 +13,11 @@ const Matches = () => {
         results,
         hasNextPage
     } = useMatches(offset);
+
+    const overrideSpinner: CSSProperties = {
+        display: "block",
+        margin: "40px auto",
+    };
 
     const intObserver = useRef<any>();
     const lastMatchRef = useCallback<any>((match: any) => {
@@ -49,8 +55,7 @@ const Matches = () => {
                         <ul className="list-group infinite-container fade-in">
                             {content}
                         </ul>
-                        {isLoading && <p className="center">Loading More Matches...</p>}
-                        <p className="center"><a href={"#top"}>Back to top</a></p>
+                        {isLoading && <PuffLoader cssOverride={overrideSpinner} color="#00bc8c"/>}
                     </div>
                 </div>
             </div>

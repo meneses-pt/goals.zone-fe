@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, {CSSProperties, useEffect, useState} from "react";
 import "./Match.css";
 import {useLocation, useParams} from "react-router-dom";
 import {getMatchDetail} from "./services/goalsZone.service";
 import {convertToDateTimeStr} from "./utils/utils";
 import Video from "./Video";
 import {Accordion} from "react-bootstrap";
+import {PuffLoader} from "react-spinners";
 
 const MatchPage = (props: any) => {
     const [match, setMatch] = useState<any>(null);
@@ -14,6 +15,11 @@ const MatchPage = (props: any) => {
     let {slug} = useParams();
     const search = useLocation().search;
     const permalinkParam = new URLSearchParams(search).get("v");
+
+    const overrideSpinner: CSSProperties = {
+        display: "block",
+        margin: "40px auto",
+    };
 
 
     useEffect(() => {
@@ -113,7 +119,7 @@ const MatchPage = (props: any) => {
                             </>
                         )
                         :
-                        noMatch
+                        <PuffLoader cssOverride={overrideSpinner} color="#00bc8c"/>
                     }
                 </div>
             </div>

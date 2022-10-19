@@ -463,3 +463,8 @@ code {
 a.list-group-item.list-group-item-action {
     border-radius: 0.25rem;
 }
+
+.spinner-item span {
+    color: #00bc8c;
+    border-color: #00bc8c;
+}
