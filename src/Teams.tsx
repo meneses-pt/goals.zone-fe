@@ -1,13 +1,12 @@
-import {CSSProperties, useCallback, useRef, useState} from "react";
-import useMatches from "./hooks/useMatches";
-import Match from "./Match";
-import {convertToDateStr} from "./utils/utils";
+import {useCallback, useRef, useState} from "react";
 import {PuffLoader} from "react-spinners";
+import {overrideSpinner} from "./constants";
 import ErrorMessage from "./ErrorMessage";
-import WeekSearch from "./WeekSearch";
-import { overrideSpinner } from "./constants";
+import useTeams from "./hooks/useTeams";
+import Team from "./Team";
+import TeamSearch from "./TeamSearch";
 
-const Matches = () => {
+const Teams = () => {
     const [offset, setOffset] = useState(0);
     const {
         isLoading,
@@ -15,10 +14,10 @@ const Matches = () => {
         error,
         results,
         hasNextPage
-    } = useMatches(offset);
+    } = useTeams(offset);
 
     const intObserver = useRef<any>();
-    const lastMatchRef = useCallback<any>((match: any) => {
+    const lastTeamRef = useCallback<any>((team: any) => {
         if (isLoading) return;
 
         if (intObserver.current) intObserver.current.disconnect();
@@ -29,19 +28,15 @@ const Matches = () => {
             }
         });
 
-        if (match) intObserver.current.observe(match);
+        if (team) intObserver.current.observe(team);
     }, [isLoading, hasNextPage]);
 
-    if (isError) return <ErrorMessage message={error.message} />;
-    let lastMatchDate: string | null = null;
-    const content = results.map((match, i) => {
-        let currentMatchDate = convertToDateStr(match.datetime);
-        match.showDateSeparator = lastMatchDate === null || lastMatchDate !== currentMatchDate;
-        lastMatchDate = currentMatchDate;
+    if (isError) return <ErrorMessage message={error.message}/>;
+    const content = results.map((team, i) => {
         if (results.length === i + 10) { // 10 records before the end
-            return <Match ref={lastMatchRef} key={match.id} match={match}/>;
+            return <Team ref={lastTeamRef} key={team.id} team={team}/>;
         }
-        return <Match key={match.id} match={match}/>;
+        return <Team key={team.id} team={team}/>;
     });
 
     return (
@@ -50,7 +45,10 @@ const Matches = () => {
                 <div className="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content bottom-margin top-padding">
                     <div className="container">
                         <ul className="list-group infinite-container fade-in">
-                            <WeekSearch />
+                            <h3>Teams</h3>
+                            <br/>
+                            <TeamSearch/>
+                            <br/>
                             {content}
                         </ul>
                         {isLoading && <PuffLoader cssOverride={overrideSpinner} color="#00bc8c"/>}
@@ -60,4 +58,4 @@ const Matches = () => {
         </>
     );
 };
-export default Matches;
+export default Teams;

@@ -7,7 +7,7 @@ const Video = ({video}: any) => {
 
     return (
         <>
-            <Accordion.Item eventKey={`${video.index}`}>
+            <Accordion.Item eventKey={`${video.index}`} className="video">
                 <Accordion.Header data-permalink={video.simple_permalink}>
                     <div id={`video${video.index}`} className="list-group-item no-padding list-group-item-action">
                         <span className="btn btn-link list-group-item-left-link">

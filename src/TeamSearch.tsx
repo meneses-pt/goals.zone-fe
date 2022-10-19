@@ -1,29 +1,29 @@
 import React, {Component} from "react";
 import AsyncSelect from "react-select/async";
-import {selectStylesForSelect, themeForSelect} from "./constants";
-import Match from "./Match";
-import {getMatchesWeekSearch} from "./services/goalsZone.service";
+import {noOptionsMessageForSelect, selectStylesForSelect, themeForSelect} from "./constants";
+import {getTeamsSearch} from "./services/goalsZone.service";
+import Team from "./Team";
 
 interface State {
     readonly inputValue: string;
 }
 
-const formatMatchResults = (data: any) => {
-    return data.map((match: any) => {
+const formatTeamResults = (data: any) => {
+    return data.map((team: any) => {
         return {
-            value: match.id,
-            data: match
+            value: team.id,
+            data: team
         };
     });
 };
 
 const loadOptions = (inputValue: string, callback: (options: any[]) => void) => {
-    getMatchesWeekSearch(inputValue)
+    getTeamsSearch(inputValue)
         .then(data => {
             if (inputValue.length < 3) {
                 callback([]);
             } else {
-                callback(formatMatchResults(data.results));
+                callback(formatTeamResults(data.results));
             }
         })
         .catch(() => {
@@ -31,7 +31,7 @@ const loadOptions = (inputValue: string, callback: (options: any[]) => void) => 
         });
 };
 
-class WeekSearch extends Component<{}, State> {
+class TeamSearch extends Component<{}, State> {
     state: State = {inputValue: ""};
 
     handleInputChange = (inputValue: string) => {
@@ -39,18 +39,10 @@ class WeekSearch extends Component<{}, State> {
         return inputValue;
     };
 
-    noOptionsMessage = (input: any) => {
-        if (input.inputValue.length === 0) {
-            return "Type to search";
-        } else if (input.inputValue.length < 3) {
-            return "Search input must be at least 3 characters";
-        } else {
-            return "No results";
-        }
-    };
+    noOptionsMessage = noOptionsMessageForSelect;
 
     formatOptionLabel = ({value, label, data}: any) => (
-        <Match key={`search-${data.id}`} match={data} showDate={true}/>
+        <Team key={`search-${data.id}`} team={data}/>
     );
 
     render() {
@@ -62,13 +54,12 @@ class WeekSearch extends Component<{}, State> {
                 theme={themeForSelect}
                 styles={selectStylesForSelect}
                 onInputChange={this.handleInputChange}
-                placeholder="Search a match from the last 7 days"
+                placeholder="Search a team"
                 noOptionsMessage={this.noOptionsMessage}
                 formatOptionLabel={this.formatOptionLabel}
                 isOptionDisabled={() => true}
-                className=""
             />);
     }
 }
 
-export default WeekSearch;
+export default TeamSearch;

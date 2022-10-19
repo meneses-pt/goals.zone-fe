@@ -1,4 +1,4 @@
-.accordion-button {
+.video .accordion-button {
     color: #fff;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
@@ -10,39 +10,55 @@
     border: 1px solid #444;
 }
 
+.video .accordion-button:hover {
+    background-color: #444444;
+}
+
 .accordion-button:focus {
     box-shadow: none;
 }
 
 .accordion-button:not(.collapsed) {
+    background-color: #666666;
     color: #fff;
     box-shadow: none;
 }
 
-.accordion-button:not(.collapsed)::after {
+.video .accordion-button:not(.collapsed):hover {
+    background-color: #888888;
+}
+
+
+.video .accordion-button:not(.collapsed)::after {
     background-image: none;
 }
 
-.accordion-button::after {
+.video .accordion-button::after {
     background-image: none;
 }
 
-.accordion-button > div > span {
+.video .accordion-button > div > span {
     text-align: left;
     color: white;
     text-decoration: none;
     padding: 0;
 }
 
-.accordion-button:hover > div > span {
+.video .accordion-button:hover > div > span {
     color: white;
+    text-decoration: underline;
 }
 
-.accordion-button:hover > div > a {
+.video .accordion-button:not(.collapsed) > div > span {
+    color: white;
+    text-decoration: underline;
+}
+
+.video .accordion-button:hover > div > a {
     height: 100%
 }
 
-.accordion-button:hover {
+.video .accordion-button:hover {
     color: white;
     text-decoration: underline;
 }
@@ -71,4 +87,8 @@
 
 .list-group-item > a {
     text-decoration: none;
+}
+
+.list-group-item {
+    background-color: #303030;
 }

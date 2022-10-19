@@ -1,6 +1,6 @@
 import {useState} from "react";
-import "./Nav.css";
 import InfoModal from "./InfoModal";
+import "./Nav.css";
 
 const Nav = () => {
     const [infoModalIsOpen, setInfoModalIsOpen] = useState(false);
@@ -21,6 +21,10 @@ const Nav = () => {
                      alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;goals.zone
             </a>
             <div className="form-inline">
+                <a id="teamsButton" className="btn btn-success small-btn small-margin-right" data-toggle="tooltip"
+                   title="Teams" href="/teams">
+                    <img src="/images/shield.svg" alt="teams" height="15"/>
+                </a>
                 <button id="moreButton" className="btn btn-success small-btn" title="Info"
                         onClick={openInfoModalFromParent}>
                     <img src="/images/circle-info.svg" alt="info" height="15"/>

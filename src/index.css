@@ -67,6 +67,10 @@ code {
     transform: translateY(-50%);
 }
 
+.top-padding {
+    padding-top: 16px;
+}
+
 .bottom-margin {
     margin-bottom: 75px;
 }
@@ -264,14 +268,6 @@ code {
 
 .small-margin-bottom {
     margin-bottom: 20px;
-}
-
-.team-a {
-    color: white;
-}
-
-.team-a:hover {
-    color: white;
 }
 
 /*********************************/
@@ -483,4 +479,22 @@ a.list-group-item.list-group-item-action {
 
 .center-text {
     text-align: center;
+}
+
+.no-wrap {
+    white-space: nowrap
+}
+
+.team-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.team-link:hover {
+    text-decoration: none;
+    color: #ddd;
+}
+
+.team-link:hover .detail-score {
+    color: white;
 }

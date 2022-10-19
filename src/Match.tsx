@@ -1,17 +1,18 @@
 import React, {forwardRef} from "react";
+import {badgePlaceholder} from "./constants";
+import "./Match.css";
 import {
     convertToDateStr,
     convertToLocalDayLongStr,
     convertToLocalDayShortStr,
     convertToLocalHourStr
 } from "./utils/utils";
-import "./Match.css";
 
-const Match = forwardRef<any, any>(({match, fromSearch = false}, ref) => {
+const Match = forwardRef<any, any>(({match, showDate}, ref) => {
     const matchBody = (
         <>
             {
-                match.showDate &&
+                match.showDateSeparator &&
                 <div className="date-separator">
                     <div className="mobile">
                         <h2 className="small-header mobile">{convertToLocalDayShortStr(match.datetime)}</h2>
@@ -24,14 +25,14 @@ const Match = forwardRef<any, any>(({match, fromSearch = false}, ref) => {
             <div className="mobile">
                 <a className="list-group-item list-group-item-action list-group-flex" href={`/${match.slug}`}>
                     <div className="list-hour-mobile">
-                        {fromSearch && <span>{convertToDateStr(match.datetime)}&nbsp;&nbsp;&nbsp;</span>}
-                        <span className={fromSearch && "small-text light-text"}>
+                        {showDate && <span>{convertToDateStr(match.datetime)}&nbsp;&nbsp;&nbsp;</span>}
+                        <span className={`${showDate ? "small-text light-text" : ""}`}>
                             {convertToLocalHourStr(match.datetime)}
                         </span>
                     </div>
                     <div className="list-match-result">
                         <img
-                            src={match.home_team.logo_file ?? "/images/badge_placeholder.png"}
+                            src={match.home_team.logo_file ?? badgePlaceholder}
                             alt={match.home_team.name}
                             className="img-fluid detail-img-thumb"
                             width="30"
@@ -42,7 +43,7 @@ const Match = forwardRef<any, any>(({match, fromSearch = false}, ref) => {
                         <b>{match.home_team.name} </b>
                         <br/>
                         <img
-                            src={match.away_team.logo_file ?? "/images/badge_placeholder.png"}
+                            src={match.away_team.logo_file ?? badgePlaceholder}
                             alt={match.away_team.name}
                             className="img-fluid detail-img-thumb"
                             width="30"
@@ -58,14 +59,14 @@ const Match = forwardRef<any, any>(({match, fromSearch = false}, ref) => {
             <div className="desktop">
                 <a className="list-group-item list-group-item-action" href={`/${match.slug}`}>
                     <div className="list-hour-desktop">
-                        {fromSearch && <span>{convertToDateStr(match.datetime)}&nbsp;&nbsp;&nbsp;</span>}
-                        <span className={fromSearch && "small-text light-text"}>
+                        {showDate && <span>{convertToDateStr(match.datetime)}&nbsp;&nbsp;&nbsp;</span>}
+                        <span className={`${showDate ? "small-text light-text" : ""}`}>
                             {convertToLocalHourStr(match.datetime)}
                         </span>
                     </div>
                     <div className="list-match-result">
                         <img
-                            src={match.home_team.logo_file ?? "/images/badge_placeholder.png"}
+                            src={match.home_team.logo_file ?? badgePlaceholder}
                             alt={match.home_team.name}
                             className="img-fluid list-img-thumb"
                             width="30"
@@ -79,7 +80,7 @@ const Match = forwardRef<any, any>(({match, fromSearch = false}, ref) => {
                         <b> {match.away_team.name} </b>
                         &nbsp;
                         <img
-                            src={match.away_team.logo_file ?? "/images/badge_placeholder.png"}
+                            src={match.away_team.logo_file ?? badgePlaceholder}
                             alt={match.away_team.name}
                             className="img-fluid list-img-thumb"
                             width="30"

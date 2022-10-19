@@ -1,12 +1,13 @@
-import React, {CSSProperties, useEffect, useState} from "react";
-import "./Match.css";
+import React, {useEffect, useState} from "react";
+import {Accordion} from "react-bootstrap";
 import {useLocation, useParams} from "react-router-dom";
+import {PuffLoader} from "react-spinners";
+import {badgePlaceholder, overrideSpinner} from "./constants";
+import ErrorMessage from "./ErrorMessage";
+import "./Match.css";
 import {getMatchDetail} from "./services/goalsZone.service";
 import {convertToDateTimeStr} from "./utils/utils";
 import Video from "./Video";
-import {Accordion} from "react-bootstrap";
-import {PuffLoader} from "react-spinners";
-import ErrorMessage from "./ErrorMessage";
 
 const MatchPage = (props: any) => {
     const [match, setMatch] = useState<any>(null);
@@ -18,15 +19,10 @@ const MatchPage = (props: any) => {
     const search = useLocation().search;
     const permalinkParam = new URLSearchParams(search).get("v");
 
-    const overrideSpinner: CSSProperties = {
-        display: "block",
-        margin: "40px auto",
-    };
-
     useEffect(() => {
         const fetchMatch = async () => {
             try {
-                let response = await getMatchDetail(`${slug}`);
+                let response = await getMatchDetail(slug as string);
                 return {success: true, data: response};
             } catch (error: any) {
                 return {success: false, data: error.message};
@@ -56,36 +52,44 @@ const MatchPage = (props: any) => {
         <>
             <div className="mobile">
                 <h3 className="small-header mobile">
-                    <img src={match.home_team.logo_file ?? "/images/badge_placeholder.png"}
-                         alt={match.home_team.name}
-                         className="img-fluid detail-img-thumb" width="30" height="30"/>
-                    &nbsp;<span
-                    className="detail-score">{match.home_team_score ?? "-"}</span> {match.home_team.name}
+                    <a className="team-link" href={`/teams/${match.home_team.slug}`}>
+                        <img src={match.home_team.logo_file ?? badgePlaceholder}
+                             alt={match.home_team.name}
+                             className="img-fluid detail-img-thumb" width="30" height="30"/>
+                        &nbsp;
+                        <span className="detail-score">{match.home_team_score ?? "-"}</span> {match.home_team.name}
+                    </a>
                     <br className="br-spacing"/>
-                    <img src={match.away_team.logo_file ?? "/images/badge_placeholder.png"}
-                         alt={match.away_team.name}
-                         className="img-fluid detail-img-thumb" width="30" height="30"/>
-                    &nbsp;<span
-                    className="detail-score">{match.away_team_score ?? "-"}</span> {match.away_team.name}
+                    <a className="team-link" href={`/teams/${match.away_team.slug}`}>
+                        <img src={match.away_team.logo_file ?? badgePlaceholder}
+                             alt={match.away_team.name}
+                             className="img-fluid detail-img-thumb" width="30" height="30"/>
+                        &nbsp;
+                        <span className="detail-score">{match.away_team_score ?? "-"}</span> {match.away_team.name}
+                    </a>
                     <br/>
                 </h3>
                 <p className="mobile-spacing">&nbsp;{convertToDateTimeStr(match.datetime)}</p>
             </div>
             <div className="desktop">
                 <h3 className="small-header">
-                    <span className={" <!-- style=\"white-space: nowrap\"-->"}>
-                        <img src={match.home_team.logo_file ?? "/images/badge_placeholder.png"}
-                             alt={match.home_team.name}
-                             className="img-fluid detail-img-thumb" width="30" height="30"/>
-                        &nbsp;
-                        <span className="team-a"><b>{match.home_team.name} </b></span>
+                    <span className="no-wrap">
+                        <a className="team-link" href={`/teams/${match.home_team.slug}`}>
+                            <img src={match.home_team.logo_file ?? badgePlaceholder}
+                                 alt={match.home_team.name}
+                                 className="img-fluid detail-img-thumb" width="30" height="30"/>
+                            &nbsp;
+                            <span><b>{match.home_team.name} </b></span>
+                        </a>
                         <span className="detail-score-desktop">{match.home_team_score ?? "-"}</span>:<span
                         className="detail-score-desktop">{match.away_team_score ?? "-"}</span>
-                        <span className="team-a"><b> {match.away_team.name}</b></span>
-                        &nbsp;
-                        <img src={match.away_team.logo_file ?? "/images/badge_placeholder.png"}
-                             alt={match.away_team.name}
-                             className="img-fluid detail-img-thumb" width="30" height="30"/>
+                        <a className="team-link" href={`/teams/${match.away_team.slug}`}>
+                            <span><b> {match.away_team.name}</b></span>
+                            &nbsp;
+                            <img src={match.away_team.logo_file ?? badgePlaceholder}
+                                 alt={match.away_team.name}
+                                 className="img-fluid detail-img-thumb" width="30" height="30"/>
+                        </a>
                     </span>
                     <p className="desktop-spacing">&nbsp;{convertToDateTimeStr(match.datetime)}</p>
                 </h3>
@@ -99,7 +103,7 @@ const MatchPage = (props: any) => {
 
     return <>
         <div className="container-fluid">
-            <div className="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content bottom-margin">
+            <div className="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content bottom-margin top-padding">
                 <div className="container">
                     {matchLoaded ? (
                             <>
