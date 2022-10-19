@@ -1,9 +1,12 @@
 import React from "react";
-import "./App.css";
 import Matches from "./Matches";
+import Nav from "./Nav";
 
 function App() {
-    return <Matches/>;
+    return <>
+        <Nav/>
+        <Matches/>
+    </>;
 }
 
 export default App;

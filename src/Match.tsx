@@ -1,4 +1,5 @@
 import React from "react";
+import convertToLocalHourStr from "./utils/utils";
 
 const Match = React.forwardRef<any, any>(({match}, ref) => {
     const matchBody = (
@@ -6,7 +7,7 @@ const Match = React.forwardRef<any, any>(({match}, ref) => {
             <div className="mobile">
                 <a className="list-group-item list-group-item-action list-group-flex" href={"#top"}>
                     <div className="list-hour-mobile">
-                        <span>{match.datetime}</span>
+                        <span>{convertToLocalHourStr(match.datetime)}</span>
                     </div>
                     <div className="list-match-result">
                         <img
@@ -37,7 +38,7 @@ const Match = React.forwardRef<any, any>(({match}, ref) => {
             <div className="desktop">
                 <a className="list-group-item list-group-item-action" href={"#top"}>
                     <div className="list-hour-desktop">
-                        <span>{match.datetime}</span>
+                        <span>{convertToLocalHourStr(match.datetime)}</span>
                     </div>
                     <div className="list-match-result">
                         <img
@@ -47,11 +48,13 @@ const Match = React.forwardRef<any, any>(({match}, ref) => {
                             width="30"
                             height="30"
                         />
-                        <b>{match.home_team.name} </b>
+                        &nbsp;
+                        <b> {match.home_team.name} </b>
                         <span className="list-score-desktop">{match.home_team_score}</span>
                         :
                         <span className="list-score-desktop">{match.away_team_score}</span>
-                        <b> {match.away_team.name}</b>
+                        <b> {match.away_team.name} </b>
+                        &nbsp;
                         <img
                             src={match.away_team.logo_file}
                             alt={match.away_team.name}
