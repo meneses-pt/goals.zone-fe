@@ -473,6 +473,10 @@ a.list-group-item.list-group-item-action {
     font-size: 9pt;
 }
 
+.light-text {
+    color: #888888;
+}
+
 .big-text {
     font-size: 40pt;
 }

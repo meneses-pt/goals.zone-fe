@@ -1,8 +1,13 @@
 import React, {forwardRef} from "react";
-import {convertToLocalDayLongStr, convertToLocalDayShortStr, convertToLocalHourStr} from "./utils/utils";
+import {
+    convertToDateStr,
+    convertToLocalDayLongStr,
+    convertToLocalDayShortStr,
+    convertToLocalHourStr
+} from "./utils/utils";
 import "./Match.css";
 
-const Match = forwardRef<any, any>(({match}, ref) => {
+const Match = forwardRef<any, any>(({match, fromSearch = false}, ref) => {
     const matchBody = (
         <>
             {
@@ -19,7 +24,10 @@ const Match = forwardRef<any, any>(({match}, ref) => {
             <div className="mobile">
                 <a className="list-group-item list-group-item-action list-group-flex" href={`/${match.slug}`}>
                     <div className="list-hour-mobile">
-                        <span>{convertToLocalHourStr(match.datetime)}</span>
+                        {fromSearch && <span>{convertToDateStr(match.datetime)}&nbsp;&nbsp;&nbsp;</span>}
+                        <span className={fromSearch && "small-text light-text"}>
+                            {convertToLocalHourStr(match.datetime)}
+                        </span>
                     </div>
                     <div className="list-match-result">
                         <img
@@ -50,7 +58,10 @@ const Match = forwardRef<any, any>(({match}, ref) => {
             <div className="desktop">
                 <a className="list-group-item list-group-item-action" href={`/${match.slug}`}>
                     <div className="list-hour-desktop">
-                        <span>{convertToLocalHourStr(match.datetime)}</span>
+                        {fromSearch && <span>{convertToDateStr(match.datetime)}&nbsp;&nbsp;&nbsp;</span>}
+                        <span className={fromSearch && "small-text light-text"}>
+                            {convertToLocalHourStr(match.datetime)}
+                        </span>
                     </div>
                     <div className="list-match-result">
                         <img
