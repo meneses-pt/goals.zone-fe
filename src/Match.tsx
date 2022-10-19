@@ -11,25 +11,25 @@ const Match = React.forwardRef<any, any>(({match}, ref) => {
                     </div>
                     <div className="list-match-result">
                         <img
-                            src={match.home_team.logo_file}
+                            src={match.home_team.logo_file ?? "/react/images/badge_placeholder.png"}
                             alt={match.home_team.name}
                             className="img-fluid detail-img-thumb"
                             width="30"
                             height="30"
                         />
                         &nbsp;
-                        <span className="list-score">{match.home_team_score}</span>
+                        <span className="list-score">{match.home_team_score ?? "-"}</span>
                         <b>{match.home_team.name} </b>
                         <br/>
                         <img
-                            src={match.away_team.logo_file}
+                            src={match.away_team.logo_file ?? "/react/images/badge_placeholder.png"}
                             alt={match.away_team.name}
                             className="img-fluid detail-img-thumb"
                             width="30"
                             height="30"
                         />
                         &nbsp;
-                        <span className="list-score">{match.away_team_score}</span>
+                        <span className="list-score">{match.away_team_score ?? "-"}</span>
                         <b>{match.away_team.name} </b>
                         <br/>
                     </div>
@@ -42,7 +42,7 @@ const Match = React.forwardRef<any, any>(({match}, ref) => {
                     </div>
                     <div className="list-match-result">
                         <img
-                            src={match.home_team.logo_file}
+                            src={match.home_team.logo_file ?? "/react/images/badge_placeholder.png"}
                             alt={match.home_team.name}
                             className="img-fluid list-img-thumb"
                             width="30"
@@ -50,13 +50,13 @@ const Match = React.forwardRef<any, any>(({match}, ref) => {
                         />
                         &nbsp;
                         <b> {match.home_team.name} </b>
-                        <span className="list-score-desktop">{match.home_team_score}</span>
+                        <span className="list-score-desktop">{match.home_team_score ?? "-"}</span>
                         :
-                        <span className="list-score-desktop">{match.away_team_score}</span>
+                        <span className="list-score-desktop">{match.away_team_score ?? "-"}</span>
                         <b> {match.away_team.name} </b>
                         &nbsp;
                         <img
-                            src={match.away_team.logo_file}
+                            src={match.away_team.logo_file ?? "/react/images/badge_placeholder.png"}
                             alt={match.away_team.name}
                             className="img-fluid list-img-thumb"
                             width="30"
