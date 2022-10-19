@@ -14,7 +14,7 @@ const Video = ({video}: any) => {
                             {video.title}
                         </span>
                         <a href={video.reddit_link} className="float-right list-group-small-link">
-                            <img alt="reddit" src="/react/images/reddit_logo.png" className="list-group-img"/>
+                            <img alt="reddit" src="/images/reddit_logo.png" className="list-group-img"/>
                         </a>
                     </div>
                 </Accordion.Header>

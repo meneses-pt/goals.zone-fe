@@ -2,7 +2,7 @@
   "name": "goals.zone-fe",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://goals.zone/react",
+  "homepage": "https://gzreact.meneses.pt",
   "dependencies": {
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.65",

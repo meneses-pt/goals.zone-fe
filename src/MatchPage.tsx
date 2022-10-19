@@ -47,13 +47,13 @@ const MatchPage = (props: any) => {
         <>
             <div className="mobile">
                 <h3 className="small-header mobile">
-                    <img src={match.home_team.logo_file ?? "/react/images/badge_placeholder.png"}
+                    <img src={match.home_team.logo_file ?? "/images/badge_placeholder.png"}
                          alt={match.home_team.name}
                          className="img-fluid detail-img-thumb" width="30" height="30"/>
                     &nbsp;<span
                     className="detail-score">{match.home_team_score ?? "-"}</span> {match.home_team.name}
                     <br className="br-spacing"/>
-                    <img src={match.away_team.logo_file ?? "/react/images/badge_placeholder.png"}
+                    <img src={match.away_team.logo_file ?? "/images/badge_placeholder.png"}
                          alt={match.away_team.name}
                          className="img-fluid detail-img-thumb" width="30" height="30"/>
                     &nbsp;<span
@@ -65,7 +65,7 @@ const MatchPage = (props: any) => {
             <div className="desktop">
                 <h3 className="small-header">
                     <span className={" <!-- style=\"white-space: nowrap\"-->"}>
-                        <img src={match.home_team.logo_file ?? "/react/images/badge_placeholder.png"}
+                        <img src={match.home_team.logo_file ?? "/images/badge_placeholder.png"}
                              alt={match.home_team.name}
                              className="img-fluid detail-img-thumb" width="30" height="30"/>
                         &nbsp;
@@ -74,7 +74,7 @@ const MatchPage = (props: any) => {
                         className="detail-score-desktop">{match.away_team_score ?? "-"}</span>
                         <span className="team-a"><b> {match.away_team.name}</b></span>
                         &nbsp;
-                        <img src={match.away_team.logo_file ?? "/react/images/badge_placeholder.png"}
+                        <img src={match.away_team.logo_file ?? "/images/badge_placeholder.png"}
                              alt={match.away_team.name}
                              className="img-fluid detail-img-thumb" width="30" height="30"/>
                     </span>

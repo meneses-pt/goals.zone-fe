@@ -6,7 +6,7 @@ import MatchPage from "./MatchPage";
 
 function App() {
 
-    return <BrowserRouter basename="/react">
+    return <BrowserRouter>
         <Nav/>
         <Routes>
             <Route path="/" element={<Matches/>}/>
