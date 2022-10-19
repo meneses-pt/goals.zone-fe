@@ -23,7 +23,6 @@ const MatchPage = (props: any) => {
         margin: "40px auto",
     };
 
-
     useEffect(() => {
         const fetchMatch = async () => {
             try {
@@ -38,6 +37,7 @@ const MatchPage = (props: any) => {
             setMatchLoaded(false);
             let res = await fetchMatch();
             if (res.success) {
+                document.title = `goals.zone • ${res.data.home_team.name} - ${res.data.away_team.name} `;
                 res.data.videos.sort((a: any, b: any) => (a.minute > b.minute) ? 1 : -1);
                 res.data.videos.forEach((v: any, i: number) => {
                     if (v.simple_permalink === permalinkParam) {
@@ -95,10 +95,6 @@ const MatchPage = (props: any) => {
 
     const noVideos = (
         <p>No videos found for this match.</p>
-    );
-
-    const noMatch = (
-        <p>No match found.</p>
     );
 
     return <>
