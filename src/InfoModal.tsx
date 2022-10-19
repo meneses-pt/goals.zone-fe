@@ -13,17 +13,16 @@ const InfoModal = (props: any) => {
                 <Modal.Title>Info</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <Accordion defaultActiveKey="0">
+                <Accordion defaultActiveKey="0" className="info-accordion">
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>About</Accordion.Header>
                         <Accordion.Body>
                             <p>
-                                goals.zone automatically fetches latest posts from <a
-                                href="https://www.reddit.com/r/soccer">/r/soccer</a> subreddit
-                                that contains videos of goals and that correspond to a football
-                                match.
+                                goals.zone automatically fetches latest posts
+                                from <a href="https://www.reddit.com/r/soccer">/r/soccer</a> subreddit that contains
+                                videos of goals and that correspond to a football match.
                             </p>
-                            <p>
+                            <span>
                                 This is a series of Open Source projects, and the code is available on
                                 <ul>
                                     <li>
@@ -33,7 +32,7 @@ const InfoModal = (props: any) => {
                                         <a href="https://github.com/meneses-pt/goals.zone-fe">goals.zone-fe</a>
                                     </li>
                                 </ul>
-                            </p>
+                            </span>
                             <p>
                                 You can reach me at <a href="mailto:andre@meneses.pt">andre@meneses.pt</a>
                             </p>
@@ -43,20 +42,15 @@ const InfoModal = (props: any) => {
                         <Accordion.Header>Disclaimer</Accordion.Header>
                         <Accordion.Body>
                             <p>
-                                This website is not responsible for, and does not own any of the content of
-                                the
-                                links that are here
-                                published.
+                                This website is not responsible for, and does not own any of the content of the links
+                                that are here published.
                             </p>
                             <p>
-                                goals.zone was built with an academic purpose and with no intention of
-                                profiting
-                                over it.
+                                goals.zone was built with an academic purpose and with no intention of profiting over
+                                it.
                             </p>
                             <p>
-                                This is an open source project and the donate button exists with the sole
-                                purpose of
-                                helping the
+                                This is an open source project and the ads exist with the sole purpose of helping the
                                 owner with the server and maintenance costs.
                             </p>
                         </Accordion.Body>
