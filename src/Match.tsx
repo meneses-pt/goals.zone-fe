@@ -66,10 +66,8 @@ const Match = React.forwardRef<any, any>(({match}, ref) => {
     );
 
     return ref ?
-        <div className="infinite-item" ref={ref}>{matchBody}</div>;
-:
-    <div className="infinite-item">{matchBody}</div>;
-    ;
+        <div className="infinite-item" ref={ref}>{matchBody}</div> :
+        <div className="infinite-item">{matchBody}</div>;
 });
 
 export default Match;
