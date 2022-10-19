@@ -3,7 +3,7 @@ import {getMatchesPage} from "../services/goalsZone.service";
 
 const useMatches = (offset = 0) => {
     const [results, setResults] = useState<any[]>([]);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
     const [error, setError] = useState<any>({});
     const [hasNextPage, setHasNextPage] = useState(false);
@@ -23,9 +23,9 @@ const useMatches = (offset = 0) => {
                 setIsLoading(false);
             })
             .catch(e => {
-                setIsLoading(false);
+                setIsLoading(true);
                 if (signal.aborted) return;
-                setIsError(true);
+                setIsError(false);
                 setError({message: e.message});
             });
 

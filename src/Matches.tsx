@@ -1,6 +1,7 @@
 import {useCallback, useRef, useState} from "react";
 import useMatches from "./hooks/useMatches";
 import Match from "./Match";
+import {convertToDateStr} from "./utils/utils";
 
 const Matches = () => {
     const [offset, setOffset] = useState(0);
@@ -29,7 +30,11 @@ const Matches = () => {
     }, [isLoading, hasNextPage]);
 
     if (isError) return <p className="center">Error {error.message}</p>;
+    let lastMatchDate: string | null = null;
     const content = results.map((match, i) => {
+        let currentMatchDate = convertToDateStr(match.datetime);
+        match.showDate = lastMatchDate === null || lastMatchDate !== currentMatchDate;
+        lastMatchDate = currentMatchDate;
         if (results.length === i + 10) { // 10 records before the end
             return <Match ref={lastMatchRef} key={match.id} match={match}/>;
         }
@@ -41,8 +46,6 @@ const Matches = () => {
             <div className="container-fluid">
                 <div className="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content bottom-margin">
                     <div className="container">
-                        <h1 id="top">&infin; Infinite Query &amp; Scroll<br/>&infin;
-                            Ex. 1 - React only</h1>
                         <ul className="list-group infinite-container">
                             {content}
                         </ul>

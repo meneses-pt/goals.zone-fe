@@ -1,9 +1,21 @@
 import React from "react";
-import convertToLocalHourStr from "./utils/utils";
+import {convertToLocalDayLongStr, convertToLocalDayShortStr, convertToLocalHourStr} from "./utils/utils";
+import "./Match.css";
 
 const Match = React.forwardRef<any, any>(({match}, ref) => {
     const matchBody = (
         <>
+            {
+                match.showDate &&
+                <div className="date-separator">
+                    <div className="mobile">
+                        <h2 className="small-header mobile">{convertToLocalDayShortStr(match.datetime)}</h2>
+                    </div>
+                    <div className="desktop">
+                        <h2 className="small-header">{convertToLocalDayLongStr(match.datetime)}</h2>
+                    </div>
+                </div>
+            }
             <div className="mobile">
                 <a className="list-group-item list-group-item-action list-group-flex" href={"#top"}>
                     <div className="list-hour-mobile">
