@@ -23,9 +23,9 @@ const useMatches = (offset = 0) => {
                 setIsLoading(false);
             })
             .catch(e => {
-                setIsLoading(true);
                 if (signal.aborted) return;
-                setIsError(false);
+                setIsLoading(false);
+                setIsError(true);
                 setError({message: e.message});
             });
 

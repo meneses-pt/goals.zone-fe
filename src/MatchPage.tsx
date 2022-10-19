@@ -6,11 +6,13 @@ import {convertToDateTimeStr} from "./utils/utils";
 import Video from "./Video";
 import {Accordion} from "react-bootstrap";
 import {PuffLoader} from "react-spinners";
+import ErrorMessage from "./ErrorMessage";
 
 const MatchPage = (props: any) => {
     const [match, setMatch] = useState<any>(null);
     const [matchLoaded, setMatchLoaded] = useState(false);
     const [activeId, setActiveId] = useState<string | null>(null);
+    const [error, setError] = useState<string | null>(null);
 
     let {slug} = useParams();
     const search = useLocation().search;
@@ -27,9 +29,8 @@ const MatchPage = (props: any) => {
             try {
                 let response = await getMatchDetail(`${slug}`);
                 return {success: true, data: response};
-            } catch (error) {
-                console.log(error);
-                return {success: false};
+            } catch (error: any) {
+                return {success: false, data: error.message};
             }
         };
 
@@ -45,6 +46,8 @@ const MatchPage = (props: any) => {
                 });
                 setMatch(res.data);
                 setMatchLoaded(true);
+            } else {
+                setError(res.data);
             }
         })();
     }, [slug, activeId, permalinkParam]);
@@ -119,7 +122,10 @@ const MatchPage = (props: any) => {
                             </>
                         )
                         :
-                        <PuffLoader cssOverride={overrideSpinner} color="#00bc8c"/>
+                        (error !== null ?
+                                <ErrorMessage message={error}/> :
+                                <PuffLoader cssOverride={overrideSpinner} color="#00bc8c"/>
+                        )
                     }
                 </div>
             </div>

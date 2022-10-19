@@ -3,6 +3,7 @@ import useMatches from "./hooks/useMatches";
 import Match from "./Match";
 import {convertToDateStr} from "./utils/utils";
 import {PuffLoader} from "react-spinners";
+import ErrorMessage from "./ErrorMessage";
 
 const Matches = () => {
     const [offset, setOffset] = useState(0);
@@ -27,7 +28,6 @@ const Matches = () => {
 
         intObserver.current = new IntersectionObserver(posts => {
             if (posts[0].isIntersecting && hasNextPage) {
-                console.log("We are near the last post!");
                 setOffset(prev => prev + 50);
             }
         });
@@ -35,7 +35,7 @@ const Matches = () => {
         if (match) intObserver.current.observe(match);
     }, [isLoading, hasNextPage]);
 
-    if (isError) return <p className="center">Error {error.message}</p>;
+    if (isError) return <ErrorMessage message={error.message} />;
     let lastMatchDate: string | null = null;
     const content = results.map((match, i) => {
         let currentMatchDate = convertToDateStr(match.datetime);
