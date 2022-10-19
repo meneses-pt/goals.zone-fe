@@ -3,6 +3,37 @@ import React from "react";
 const Match = React.forwardRef<any, any>(({match}, ref) => {
     const matchBody = (
         <>
+            <div className="mobile">
+                <a className="list-group-item list-group-item-action list-group-flex" href={"#top"}>
+                    <div className="list-hour-mobile">
+                        <span>{match.datetime}</span>
+                    </div>
+                    <div className="list-match-result">
+                        <img
+                            src={match.home_team.logo_file}
+                            alt={match.home_team.name}
+                            className="img-fluid detail-img-thumb"
+                            width="30"
+                            height="30"
+                        />
+                        &nbsp;
+                        <span className="list-score">{match.home_team_score}</span>
+                        <b>{match.home_team.name} </b>
+                        <br/>
+                        <img
+                            src={match.away_team.logo_file}
+                            alt={match.away_team.name}
+                            className="img-fluid detail-img-thumb"
+                            width="30"
+                            height="30"
+                        />
+                        &nbsp;
+                        <span className="list-score">{match.away_team_score}</span>
+                        <b>{match.away_team.name} </b>
+                        <br/>
+                    </div>
+                </a>
+            </div>
             <div className="desktop">
                 <a className="list-group-item list-group-item-action" href={"#top"}>
                     <div className="list-hour-desktop">
@@ -35,8 +66,10 @@ const Match = React.forwardRef<any, any>(({match}, ref) => {
     );
 
     return ref ?
-        <div className="infinite-item" ref={ref}>{matchBody}</div> :
-        <div className="infinite-item">{matchBody}</div>;
+        <div className="infinite-item" ref={ref}>{matchBody}</div>;
+:
+    <div className="infinite-item">{matchBody}</div>;
+    ;
 });
 
 export default Match;
