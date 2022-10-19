@@ -20,4 +20,15 @@ const convertToDateStr = (dateStr: string) => {
     return (moment(localDate)).format("DD-MM-YYYY");
 };
 
-export {convertToLocalHourStr, convertToLocalDayShortStr, convertToLocalDayLongStr, convertToDateStr};
+const convertToDateTimeStr = (dateStr: string) => {
+    const localDate = new Date(dateStr);
+    return (moment(localDate)).format("DD-MMM-YYYY HH:mm");
+};
+
+export {
+    convertToLocalHourStr,
+    convertToLocalDayShortStr,
+    convertToLocalDayLongStr,
+    convertToDateStr,
+    convertToDateTimeStr
+};

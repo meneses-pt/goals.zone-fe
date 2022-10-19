@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {getMatchesPage} from "../services/goalsZone.service";
+import {getMatchesList} from "../services/goalsZone.service";
 
 const useMatches = (offset = 0) => {
     const [results, setResults] = useState<any[]>([]);
@@ -16,7 +16,7 @@ const useMatches = (offset = 0) => {
         const controller = new AbortController();
         const {signal} = controller;
 
-        getMatchesPage(offset, {signal})
+        getMatchesList(offset, {signal})
             .then(data => {
                 setResults(prev => [...prev, ...data.results]);
                 setHasNextPage(Boolean(data.results.length));

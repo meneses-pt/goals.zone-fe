@@ -1,9 +1,9 @@
-import React from "react";
+import {useState} from "react";
 import "./Nav.css";
 import InfoModal from "./InfoModal";
 
 const Nav = () => {
-    const [infoModalIsOpen, setInfoModalIsOpen] = React.useState(false);
+    const [infoModalIsOpen, setInfoModalIsOpen] = useState(false);
 
     function openInfoModalFromParent() {
         setInfoModalIsOpen(true);
@@ -15,7 +15,7 @@ const Nav = () => {
 
     return <>
         <nav className="navbar navbar-dark bg-dark">
-            <a className="navbar-brand" href={"#top"}>
+            <a className="navbar-brand" href={"/react/"}>
                 <img src="/react/images/original_icon_w200.png" width="40" height="28"
                      className="d-inline-block align-top"
                      alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;goals.zone

@@ -18,6 +18,19 @@ code {
     monospace;
 }
 
+.fade-in {
+    animation: fadeInAnimation 0.2s linear;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 .list-img-thumb {
     max-height: 30px;
@@ -88,21 +101,10 @@ code {
     width: 10%;
     height: 100%;
     padding: 0.75rem 0;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
 }
 
 .list-group-item.no-padding {
     padding: 0;
-}
-
-.donate-form {
-    right: 0;
-    top: 0;
-    position: absolute;
-    height: auto;
-    margin: 10px;
 }
 
 .mobile {
@@ -456,4 +458,8 @@ code {
 .list-group-item:first-child {
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
+}
+
+a.list-group-item.list-group-item-action {
+    border-radius: 0.25rem;
 }

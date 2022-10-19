@@ -1,8 +1,8 @@
-import React from "react";
+import React, {forwardRef} from "react";
 import {convertToLocalDayLongStr, convertToLocalDayShortStr, convertToLocalHourStr} from "./utils/utils";
 import "./Match.css";
 
-const Match = React.forwardRef<any, any>(({match}, ref) => {
+const Match = forwardRef<any, any>(({match}, ref) => {
     const matchBody = (
         <>
             {
@@ -17,7 +17,7 @@ const Match = React.forwardRef<any, any>(({match}, ref) => {
                 </div>
             }
             <div className="mobile">
-                <a className="list-group-item list-group-item-action list-group-flex" href={"#top"}>
+                <a className="list-group-item list-group-item-action list-group-flex" href={`/react/${match.slug}`}>
                     <div className="list-hour-mobile">
                         <span>{convertToLocalHourStr(match.datetime)}</span>
                     </div>
@@ -48,7 +48,7 @@ const Match = React.forwardRef<any, any>(({match}, ref) => {
                 </a>
             </div>
             <div className="desktop">
-                <a className="list-group-item list-group-item-action" href={"#top"}>
+                <a className="list-group-item list-group-item-action" href={`/react/${match.slug}`}>
                     <div className="list-hour-desktop">
                         <span>{convertToLocalHourStr(match.datetime)}</span>
                     </div>

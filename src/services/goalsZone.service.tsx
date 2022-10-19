@@ -4,7 +4,12 @@ export const goalsZoneService = axios.create({
     baseURL: "https://goals.zone/api"
 });
 
-export const getMatchesPage = async (offsetParam: number = 0, options: {} = {}) => {
+export const getMatchesList = async (offsetParam: number = 0, options: {} = {}) => {
     const response = await goalsZoneService.get(`/matches?limit=50&offset=${offsetParam}&format=json`, options);
+    return response.data;
+};
+
+export const getMatchDetail = async (slug: string, options: {} = {}) => {
+    const response = await goalsZoneService.get(`/matches/${slug}?format=json`, options);
     return response.data;
 };

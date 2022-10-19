@@ -46,7 +46,7 @@ const Matches = () => {
             <div className="container-fluid">
                 <div className="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content bottom-margin">
                     <div className="container">
-                        <ul className="list-group infinite-container">
+                        <ul className="list-group infinite-container fade-in">
                             {content}
                         </ul>
                         {isLoading && <p className="center">Loading More Matches...</p>}

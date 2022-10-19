@@ -1,0 +1,74 @@
+.accordion-button {
+    color: #fff;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #303030;
+    border: 1px solid #444;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #fff;
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: none;
+}
+
+.accordion-button::after {
+    background-image: none;
+}
+
+.accordion-button > div > span {
+    text-align: left;
+    color: white;
+    text-decoration: none;
+    padding: 0;
+}
+
+.accordion-button:hover > div > span {
+    color: white;
+}
+
+.accordion-button:hover > div > a {
+    height: 100%
+}
+
+.accordion-button:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.accordion-body {
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.accordion-item {
+    border: none;
+}
+
+.accordion-header {
+    border: none;
+}
+
+.accordion-item:first-child > .accordion-header > .accordion-button {
+    border-top-left-radius: 0.25rem ! important;
+    border-top-right-radius: 0.25rem ! important;
+}
+
+.list-group-item:first-child {
+    border-radius: 0;
+}
+
+.list-group-item > a {
+    text-decoration: none;
+}
