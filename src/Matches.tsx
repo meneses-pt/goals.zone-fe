@@ -4,6 +4,7 @@ import Match from "./Match";
 import {convertToDateStr} from "./utils/utils";
 import {PuffLoader} from "react-spinners";
 import ErrorMessage from "./ErrorMessage";
+import WeekSearch from "./WeekSearch";
 
 const Matches = () => {
     const [offset, setOffset] = useState(0);
@@ -53,6 +54,7 @@ const Matches = () => {
                 <div className="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content bottom-margin">
                     <div className="container">
                         <ul className="list-group infinite-container fade-in">
+                            <WeekSearch />
                             {content}
                         </ul>
                         {isLoading && <PuffLoader cssOverride={overrideSpinner} color="#00bc8c"/>}
