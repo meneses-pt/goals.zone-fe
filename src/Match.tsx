@@ -34,11 +34,9 @@ const Match = React.forwardRef<any, any>(({match}, ref) => {
         </>
     );
 
-    const content = ref ?
+    return ref ?
         <div className="infinite-item" ref={ref}>{matchBody}</div> :
         <div className="infinite-item">{matchBody}</div>;
-
-    return content;
 });
 
 export default Match;

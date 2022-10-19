@@ -30,7 +30,7 @@ const Matches = () => {
 
     if (isError) return <p className="center">Error {error.message}</p>;
     const content = results.map((match, i) => {
-        if (results.length === i + 1) {
+        if (results.length === i + 10) { // 10 records before the end
             return <Match ref={lastMatchRef} key={match.id} match={match}/>;
         }
         return <Match key={match.id} match={match}/>;
