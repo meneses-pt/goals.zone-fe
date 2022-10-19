@@ -6,11 +6,11 @@ import MatchPage from "./MatchPage";
 
 function App() {
 
-    return <BrowserRouter>
+    return <BrowserRouter basename="/react">
         <Nav/>
         <Routes>
-            <Route path="react/" element={<Matches/>}/>
-            <Route path="react/:slug" element={<MatchPage/>}/>
+            <Route path="/" element={<Matches/>}/>
+            <Route path="/:slug" element={<MatchPage/>}/>
         </Routes>
     </BrowserRouter>;
 }
