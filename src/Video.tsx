@@ -13,7 +13,8 @@ const Video = ({video}: any) => {
                         <span className="btn btn-link list-group-item-left-link">
                             {video.title}
                         </span>
-                        <a href={video.reddit_link} className="float-right list-group-small-link">
+                        <a href={video.reddit_link} className="list-group-small-link"
+                           onClick={evt => evt.stopPropagation()}>
                             <img alt="reddit" src="/images/reddit_logo.png" className="list-group-img"/>
                         </a>
                     </div>
