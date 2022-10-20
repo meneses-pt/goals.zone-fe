@@ -18,7 +18,7 @@ const useTeams = (offset = 0) => {
 
         getTeamsList(offset, {signal})
             .then(data => {
-                setResults(prev => [...prev, ...data.results]);
+                setResults(prev => [...prev, ...data]);
                 setHasNextPage(Boolean(data.results.length));
                 setIsLoading(false);
             })

@@ -18,7 +18,7 @@ const useMatches = (offset = 0) => {
 
         getMatchesList(offset, {signal})
             .then(data => {
-                setResults(prev => [...prev, ...data.results]);
+                setResults(prev => [...prev, ...data]);
                 setHasNextPage(Boolean(data.results.length));
                 setIsLoading(false);
             })
