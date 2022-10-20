@@ -5,7 +5,7 @@ export const goalsZoneService = axios.create({
 });
 
 export const getMatchesList = async (offsetParam: number = 0, options: {} = {}) => {
-    const response = await goalsZoneService.get(`/matches?limit=50&offset=${offsetParam}&format=json`, options);
+    const response = await goalsZoneService.get(`/matches/?limit=50&offset=${offsetParam}&format=json`, options);
     return response.data;
 };
 
