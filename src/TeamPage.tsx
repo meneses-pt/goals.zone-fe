@@ -56,9 +56,9 @@ const TeamPage = () => {
             {
                 results.map((match, i) => {
                     if (results.length === i + 10) { // 10 records before the end
-                        return <Match ref={lastTeamRef} key={match.id} match={match} showDate={true}/>;
+                        return <Match ref={lastTeamRef} key={match.id} match={match} showDate={true} withYear={true}/>;
                     }
-                    return <Match key={match.id} match={match} showDate={true}/>;
+                    return <Match key={match.id} match={match} showDate={true} withYear={true}/>;
                 })
             }
         </>

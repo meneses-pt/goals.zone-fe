@@ -8,7 +8,7 @@ import {
     convertToLocalHourStr
 } from "./utils/utils";
 
-const Match = forwardRef<any, any>(({match, showDate}, ref) => {
+const Match = forwardRef<any, any>(({match, showDate, withYear = false}, ref) => {
     const matchBody = (
         <>
             {
@@ -25,7 +25,7 @@ const Match = forwardRef<any, any>(({match, showDate}, ref) => {
             <div className="mobile">
                 <a className="list-group-item list-group-item-action list-group-flex" href={`/${match.slug}`}>
                     <div className="list-hour-mobile">
-                        {showDate && <span>{convertToDateStr(match.datetime)}&nbsp;&nbsp;&nbsp;</span>}
+                        {showDate && <span>{convertToDateStr(match.datetime, withYear)}&nbsp;&nbsp;&nbsp;</span>}
                         <span className={`${showDate ? "small-text light-text" : ""}`}>
                             {convertToLocalHourStr(match.datetime)}
                         </span>
@@ -59,7 +59,7 @@ const Match = forwardRef<any, any>(({match, showDate}, ref) => {
             <div className="desktop">
                 <a className="list-group-item list-group-item-action" href={`/${match.slug}`}>
                     <div className="list-hour-desktop">
-                        {showDate && <span>{convertToDateStr(match.datetime)}&nbsp;&nbsp;&nbsp;</span>}
+                        {showDate && <span>{convertToDateStr(match.datetime, withYear)}&nbsp;&nbsp;&nbsp;</span>}
                         <span className={`${showDate ? "small-text light-text" : ""}`}>
                             {convertToLocalHourStr(match.datetime)}
                         </span>

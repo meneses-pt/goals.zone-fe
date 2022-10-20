@@ -15,9 +15,10 @@ const convertToLocalDayLongStr = (dateStr: string) => {
     return (moment(localDate)).format("dddd, DD MMMM YYYY");
 };
 
-const convertToDateStr = (dateStr: string) => {
+const convertToDateStr = (dateStr: string, withYear: boolean = false) => {
+    const format = withYear ? "DD-MM-YY" : "DD-MM";
     const localDate = new Date(dateStr);
-    return (moment(localDate)).format("DD-MM-YYYY");
+    return (moment(localDate)).format(format);
 };
 
 const convertToDateTimeStr = (dateStr: string) => {
