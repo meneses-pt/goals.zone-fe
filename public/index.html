@@ -34,8 +34,62 @@
           content="This is the place where you can watch videos of the latest goals of football matches."/>
 
     <!-- Start Google Ads -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027"
-            crossorigin="anonymous"></script>
+    <!--    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027"-->
+    <!--            crossorigin="anonymous"></script>-->
+    <script>
+        ( function() {
+            var insertAdsByGoogleJs = function() {
+                var element = document.createElement('script');
+                var firstScript = document.getElementsByTagName('script')[0];
+                var url = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027";
+                element.async = true;
+                element.type = 'text/javascript';
+                element.src = url;
+                document.getElementsByTagName('head')[0].appendChild(element);
+            };
+            // Run this in an interval (every 0.1s) just in case we are still waiting for consent
+            var cnt = 0;
+            var consentSetInterval = setInterval(function(){
+                cnt += 1;
+                // Bail if we have not gotten a consent response after 60 seconds.
+                if( cnt === 600 )
+                    clearInterval(consentSetInterval);
+                if( typeof window.__tcfapi !== 'undefined' ) { // Check if window.__tcfapi has been set
+                    clearInterval( consentSetInterval );
+                    window.__tcfapi( 'addEventListener', 2, function( tcData,listenerSuccess ) {
+                        if ( listenerSuccess ) {
+                            if( tcData.eventStatus === 'tcloaded' || tcData.eventStatus === 'useractioncomplete' ) {
+                                if ( ! tcData.gdprApplies ) {
+                                    // GDPR DOES NOT APPLY
+                                    // Insert adsbygoogle.js onto the page.
+                                    insertAdsByGoogleJs();
+                                    console.log("No GDPR");
+                                }
+                                else {
+                                    // GDPR DOES APPLY
+                                    // Purpose 1 refers to the storage and/or access of information on a device.
+                                    var hasDeviceStorageAndAccessConsent = tcData.purpose.consents[1] || false;
+                                    // Google Requires Consent for Purpose 1
+                                    if (hasDeviceStorageAndAccessConsent) {
+                                        // GLOBAL VENDOR LIST - https://iabeurope.eu/vendor-list-tcf-v2-0/
+                                        // CHECK FOR GOOGLE ADVERTISING PRODUCTS CONSENT. (IAB Vendor ID 755)
+                                        var hasGoogleAdvertisingProductsConsent = tcData.vendor.consents[755] || false;
+                                        // Check if the user gave Google Advertising Products consent (iab vendor 755)
+                                        if(hasGoogleAdvertisingProductsConsent) {
+                                            // Insert adsbygoogle.js onto the page.
+                                            insertAdsByGoogleJs();
+                                            console.log("GDPR & Consent")
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    } );
+                }
+                cnt++;
+            }, 100);
+        })();
+    </script>
     <!-- End Google Ads -->
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
