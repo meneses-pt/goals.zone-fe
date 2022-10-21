@@ -19,7 +19,7 @@ const useMatches = (offset = 0) => {
         getMatchesList(offset, {signal})
             .then(data => {
                 setResults(prev => [...prev, ...data]);
-                setHasNextPage(Boolean(data.results.length));
+                setHasNextPage(Boolean(data.length));
                 setIsLoading(false);
             })
             .catch(e => {
