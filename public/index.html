@@ -48,6 +48,17 @@
     </script>
 </head>
 <body>
+<!-- Start Google Ads TCF -->
+<script type="text/javascript">
+    (adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=1;
+    __tcfapi('addEventListener', 2, function(tcData, success) {
+        if (success && tcData.gdprApplies && (tcData.eventStatus === 'tcloaded' || tcData.eventStatus === 'useractioncomplete') ) {
+            (adsbygoogle=window.adsbygoogle||[]).pauseAdRequests=0;
+            __tcfapi('removeEventListener', 2, () => {}, tcData.listenerId);
+        }
+    })
+</script>
+<!-- End Google Ads TCF -->
 <!-- RollerAds -->
 <script async data-cfasync="false">
     (function () {
