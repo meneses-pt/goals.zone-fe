@@ -34,11 +34,11 @@
           content="This is the place where you can watch videos of the latest goals of football matches."/>
 
     <!-- Start Google Ads -->
-    <!--    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027"-->
-    <!--            crossorigin="anonymous"></script>-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027"
+            crossorigin="anonymous"></script>
     <script>
-        ( function() {
-            var insertAdsByGoogleJs = function() {
+        (function () {
+            var insertAdsByGoogleJs = function () {
                 var element = document.createElement('script');
                 var firstScript = document.getElementsByTagName('script')[0];
                 var url = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027";
@@ -49,23 +49,22 @@
             };
             // Run this in an interval (every 0.1s) just in case we are still waiting for consent
             var cnt = 0;
-            var consentSetInterval = setInterval(function(){
+            var consentSetInterval = setInterval(function () {
                 cnt += 1;
                 // Bail if we have not gotten a consent response after 60 seconds.
-                if( cnt === 600 )
+                if (cnt === 600)
                     clearInterval(consentSetInterval);
-                if( typeof window.__tcfapi !== 'undefined' ) { // Check if window.__tcfapi has been set
-                    clearInterval( consentSetInterval );
-                    window.__tcfapi( 'addEventListener', 2, function( tcData,listenerSuccess ) {
-                        if ( listenerSuccess ) {
-                            if( tcData.eventStatus === 'tcloaded' || tcData.eventStatus === 'useractioncomplete' ) {
-                                if ( ! tcData.gdprApplies ) {
+                if (typeof window.__tcfapi !== 'undefined') { // Check if window.__tcfapi has been set
+                    clearInterval(consentSetInterval);
+                    window.__tcfapi('addEventListener', 2, function (tcData, listenerSuccess) {
+                        if (listenerSuccess) {
+                            if (tcData.eventStatus === 'tcloaded' || tcData.eventStatus === 'useractioncomplete') {
+                                if (!tcData.gdprApplies) {
                                     // GDPR DOES NOT APPLY
                                     // Insert adsbygoogle.js onto the page.
                                     insertAdsByGoogleJs();
                                     console.log("No GDPR");
-                                }
-                                else {
+                                } else {
                                     // GDPR DOES APPLY
                                     // Purpose 1 refers to the storage and/or access of information on a device.
                                     var hasDeviceStorageAndAccessConsent = tcData.purpose.consents[1] || false;
@@ -75,7 +74,7 @@
                                         // CHECK FOR GOOGLE ADVERTISING PRODUCTS CONSENT. (IAB Vendor ID 755)
                                         var hasGoogleAdvertisingProductsConsent = tcData.vendor.consents[755] || false;
                                         // Check if the user gave Google Advertising Products consent (iab vendor 755)
-                                        if(hasGoogleAdvertisingProductsConsent) {
+                                        if (hasGoogleAdvertisingProductsConsent) {
                                             // Insert adsbygoogle.js onto the page.
                                             insertAdsByGoogleJs();
                                             console.log("GDPR & Consent")
@@ -84,7 +83,7 @@
                                 }
                             }
                         }
-                    } );
+                    });
                 }
                 cnt++;
             }, 100);
@@ -96,7 +95,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BJJWR6H9Q7"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() {dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
         gtag('config', 'G-BJJWR6H9Q7');
     </script>
@@ -116,10 +119,14 @@
             opts.zoneID = 735652;
             opts.extClickID = clickID;
             opts.subID1 = sourceID;
-            opts.actions.onPermissionGranted = () => {};
-            opts.actions.onPermissionDenied = () => {};
-            opts.actions.onAlreadySubscribed = () => {};
-            opts.actions.onError = () => {};
+            opts.actions.onPermissionGranted = () => {
+            };
+            opts.actions.onPermissionDenied = () => {
+            };
+            opts.actions.onAlreadySubscribed = () => {
+            };
+            opts.actions.onError = () => {
+            };
         };
         document.head.appendChild(s);
     })()
