@@ -34,8 +34,8 @@
           content="This is the place where you can watch videos of the latest goals of football matches."/>
 
     <!-- Start Google Ads -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027"
-            crossorigin="anonymous"></script>
+    <!--    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027"-->
+    <!--            crossorigin="anonymous"></script>-->
     <script>
         (function () {
             var insertAdsByGoogleJs = function () {
@@ -44,6 +44,7 @@
                 var url = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027";
                 element.async = true;
                 element.type = 'text/javascript';
+                element.crossOrigin = "anonymous";
                 element.src = url;
                 document.getElementsByTagName('head')[0].appendChild(element);
             };
