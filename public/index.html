@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Start Vidoomy -->
-    <script type="text/javascript" src="https://ads.vidoomy.com/goalszone_19890.js" async></script>
+    <!--    <script type="text/javascript" src="https://ads.vidoomy.com/goalszone_19890.js" async></script>-->
     <!-- End Vidoomy -->
 
     <!-- Start cookieyes banner -->
@@ -51,6 +51,7 @@
             // Run this in an interval (every 0.1s) just in case we are still waiting for consent
             var cnt = 0;
             var consentSetInterval = setInterval(function () {
+                console.log("Checking GDPR Consent");
                 cnt += 1;
                 // Bail if we have not gotten a consent response after 60 seconds.
                 if (cnt === 600)
