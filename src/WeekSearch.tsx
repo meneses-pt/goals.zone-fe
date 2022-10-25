@@ -18,13 +18,13 @@ const formatMatchResults = (data: any) => {
 };
 
 const loadOptions = (inputValue: string, callback: (options: any[]) => void) => {
+    if(inputValue.length < 3) {
+        callback([]);
+        return;
+    }
     getMatchesWeekSearch(inputValue)
         .then(data => {
-            if (inputValue.length < 3) {
-                callback([]);
-            } else {
-                callback(formatMatchResults(data.results));
-            }
+            callback(formatMatchResults(data.results));
         })
         .catch(() => {
             callback([]);
