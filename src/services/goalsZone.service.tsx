@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const goalsZoneService = axios.create({
-    baseURL: "https://gz.meneses.pt/api"
+    baseURL: "https://gogz.meneses.pt/api"
 });
 
 export const getMatchesList = async (offsetParam: number = 0, options: {} = {}) => {
