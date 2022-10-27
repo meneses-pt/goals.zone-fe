@@ -18,13 +18,13 @@ const formatTeamResults = (data: any) => {
 };
 
 const loadOptions = (inputValue: string, callback: (options: any[]) => void) => {
+    if(inputValue.length < 3) {
+        callback([]);
+        return;
+    }
     getTeamsSearch(inputValue)
         .then(data => {
-            if (inputValue.length < 3) {
-                callback([]);
-            } else {
-                callback(formatTeamResults(data.results));
-            }
+            callback(formatTeamResults(data));
         })
         .catch(() => {
             callback([]);

@@ -171,6 +171,7 @@ code {
 .list-hour-desktop {
     display: inline-block;
     margin-right: 15px;
+    vertical-align: bottom;
 }
 
 .list-match-result {

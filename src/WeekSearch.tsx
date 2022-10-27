@@ -24,7 +24,7 @@ const loadOptions = (inputValue: string, callback: (options: any[]) => void) => 
     }
     getMatchesWeekSearch(inputValue)
         .then(data => {
-            callback(formatMatchResults(data.results));
+            callback(formatMatchResults(data));
         })
         .catch(() => {
             callback([]);
