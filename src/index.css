@@ -171,6 +171,9 @@ code {
 .list-hour-desktop {
     display: inline-block;
     margin-right: 15px;
+}
+
+.list-hour-desktop.show-date {
     vertical-align: bottom;
 }
 

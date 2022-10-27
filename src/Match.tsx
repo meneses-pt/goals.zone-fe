@@ -60,7 +60,7 @@ const Match = forwardRef<any, any>(({match, showDate, withYear = false}, ref) =>
             </div>
             <div className="desktop">
                 <a className="list-group-item list-group-item-action" href={`/${match.slug}`}>
-                    <div className="list-hour-desktop">
+                    <div className={`list-hour-desktop ${showDate ? "show-date" : ""}`}>
                         {showDate && <>
                             <span className="no-wrap">{convertToDateStr(match.datetime, withYear)}</span><br/>
                         </>}
