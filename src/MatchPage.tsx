@@ -34,7 +34,6 @@ const MatchPage = (props: any) => {
             let res = await fetchMatch();
             if (res.success) {
                 document.title = `goals.zone • ${res.data.home_team.name} - ${res.data.away_team.name} `;
-                res.data.videos.sort((a: any, b: any) => (a.minute > b.minute) ? 1 : -1);
                 res.data.videos.forEach((v: any, i: number) => {
                     if (v.simple_permalink === permalinkParam) {
                         setActiveId(`${i}`);
