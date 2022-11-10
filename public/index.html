@@ -167,12 +167,62 @@
                 var uspInterval = setInterval(checkIfUspIsReady, 6000);
             }
         })();
+
+
+        function injectGoogleAds() {
+            let script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.async = true;
+            script.crossOrigin = 'anonymous';
+            script.onload = function(){
+                console.log('Debug: Google Ads has loaded');
+            };
+            script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027';
+            document.getElementsByTagName('head')[0].appendChild(script);
+        }
+
+        // This sample code illustrate how to implement a addEventListener callback
+        // function and triggers a Google publisher tag refresh when consent is
+        // either available or obtained. NOTE: Please review and update this code for
+        // your own needs.
+        // Register the addEventListener at the beginning of your page load
+        // after the CMP JS as been loaded
+        __tcfapi('addEventListener', 2, function(tcData, success) {
+            if (success) {
+                if (tcData.gdprApplies) {
+                    if (tcData.eventStatus === 'tcloaded') {
+                        // We have consent, get the tcData string and do the ad request.
+                        // The example here is for Google publisher tag. You may need to modify
+                        // this code for usage in your web page.
+                        injectGoogleAds();
+                        // print a debug message to the console
+                        console.log('Debug: tcloaded');
+                    } else if (tcData.eventStatus === 'useractioncomplete') {
+                        // The user gave consent through the UI, get the tcdata string and
+                        // do the ad request. The example here is for Google publisher tag.
+                        // You may need to modify this code for usage in your web page.
+                        injectGoogleAds();
+                        // print a debug message to the console
+                        console.log('Debug: useractioncomplete');
+                    } else {
+                        // print a debug message to the console
+                        console.log('Debug: tcData.eventStatus: ', tcData.eventStatus);
+                    }
+                } else { /* gdpr does not apply */
+                    // Most likely you want to make the ad request in this case
+                    injectGoogleAds();
+                    // print a debug message to the console
+                    console.log('Debug: gdpr doesn\'t apply');
+                }
+            }
+        })
     </script>
     <!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
 
     <!-- Start Google Ads -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027"
-            crossorigin="anonymous"></script>
+    <!-- Trying to load dynamically -->
+    <!--    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027"-->
+    <!--            crossorigin="anonymous"></script>-->
     <!-- End Google Ads -->
 
     <!-- Start Vidoomy -->
