@@ -48,10 +48,11 @@ const MatchPage = (props: any) => {
                     setTimeout(() => {
                         let element = document.getElementById(`video${currentElementId}`);
                         if (element) {
-                            element.scrollIntoView({
-                                behavior: "smooth",
-                                block: "end",
-                                inline: "nearest",
+                            let rect = element.getBoundingClientRect();
+                            window.scrollTo({
+                                top: rect.y - 100,
+                                left: 0,
+                                behavior: "smooth"
                             });
                         }
                     }, 500);
