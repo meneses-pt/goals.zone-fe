@@ -34,13 +34,26 @@ const MatchPage = (props: any) => {
             let res = await fetchMatch();
             if (res.success) {
                 document.title = `goals.zone • ${res.data.home_team.name} - ${res.data.away_team.name} `;
+                let currentElementId = -1;
                 res.data.videos.forEach((v: any, i: number) => {
                     if (v.simple_permalink === permalinkParam) {
+                        currentElementId = i;
                         setActiveId(`${i}`);
                     }
                 });
                 setMatch(res.data);
                 setMatchLoaded(true);
+                console.log(currentElementId);
+                if (currentElementId >= 0) {
+                    let element = document.getElementById(`video${currentElementId}`);
+                    if(element) {
+                        element.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                            inline: "nearest",
+                        });
+                    }
+                }
             } else {
                 setError(res.data);
             }
@@ -112,7 +125,9 @@ const MatchPage = (props: any) => {
                                         <Accordion defaultActiveKey={activeId} flush className="fade-in">
                                             {match.videos.map((v: any, i: number) => {
                                                 v.index = i;
-                                                return <Video key={`video${i}`} video={v}/>;
+                                                return <Video id={`video${i}`}
+                                                              key={`video${i}`}
+                                                              video={v}/>;
                                             })}
                                         </Accordion>
                                     </>

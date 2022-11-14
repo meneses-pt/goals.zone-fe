@@ -1,4 +1,4 @@
-import {CSSProperties, useCallback, useRef, useState} from "react";
+import {useCallback, useRef, useState} from "react";
 import useMatches from "./hooks/useMatches";
 import Match from "./Match";
 import {convertToDateStr} from "./utils/utils";
