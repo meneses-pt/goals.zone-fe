@@ -50,7 +50,7 @@ const MatchPage = (props: any) => {
                         if (element) {
                             element.scrollIntoView({
                                 behavior: "smooth",
-                                block: "start",
+                                block: "end",
                                 inline: "nearest",
                             });
                         }
