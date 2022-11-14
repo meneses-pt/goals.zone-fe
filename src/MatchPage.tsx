@@ -45,14 +45,16 @@ const MatchPage = (props: any) => {
                 setMatchLoaded(true);
                 console.log(currentElementId);
                 if (currentElementId >= 0) {
-                    let element = document.getElementById(`video${currentElementId}`);
-                    if(element) {
-                        element.scrollIntoView({
-                            behavior: "smooth",
-                            block: "start",
-                            inline: "nearest",
-                        });
-                    }
+                    setTimeout(() => {
+                        let element = document.getElementById(`video${currentElementId}`);
+                        if (element) {
+                            element.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start",
+                                inline: "nearest",
+                            });
+                        }
+                    }, 500);
                 }
             } else {
                 setError(res.data);
