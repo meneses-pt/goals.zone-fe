@@ -49,6 +49,8 @@ const Matches = () => {
             <div className="container-fluid">
                 <div className="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content bottom-margin top-padding">
                     <div className="container">
+                        <div id='responsive-1'>
+                        </div>
                         <ul className="list-group infinite-container fade-in">
                             <WeekSearch />
                             {content}

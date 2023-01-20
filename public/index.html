@@ -9,7 +9,7 @@
 
     <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
     <script type="text/javascript" async=true>
-        (function() {
+        (function () {
             var host = window.location.hostname;
             var element = document.createElement('script');
             var firstScript = document.getElementsByTagName('script')[0];
@@ -75,8 +75,8 @@
                             args[2](retr);
                         }
                     } else {
-                        if(args[0] === 'init' && typeof args[3] === 'object') {
-                            args[3] = Object.assign(args[3], { tag_version: 'V2' });
+                        if (args[0] === 'init' && typeof args[3] === 'object') {
+                            args[3] = Object.assign(args[3], {tag_version: 'V2'});
                         }
                         queue.push(args);
                     }
@@ -92,7 +92,8 @@
                         } else {
                             json = event.data;
                         }
-                    } catch (ignore) {}
+                    } catch (ignore) {
+                    }
 
                     var payload = json.__tcfapiCall;
 
@@ -100,7 +101,7 @@
                         window.__tcfapi(
                             payload.command,
                             payload.version,
-                            function(retValue, success) {
+                            function (retValue, success) {
                                 var returnMsg = {
                                     __tcfapiReturn: {
                                         returnValue: retValue,
@@ -126,7 +127,8 @@
                             cmpFrame = win;
                             break;
                         }
-                    } catch (ignore) {}
+                    } catch (ignore) {
+                    }
 
                     if (win === window.top) {
                         break;
@@ -142,10 +144,10 @@
 
             makeStub();
 
-            var uspStubFunction = function() {
+            var uspStubFunction = function () {
                 var arg = arguments;
                 if (typeof window.__uspapi !== uspStubFunction) {
-                    setTimeout(function() {
+                    setTimeout(function () {
                         if (typeof window.__uspapi !== 'undefined') {
                             window.__uspapi.apply(window.__uspapi, arg);
                         }
@@ -153,7 +155,7 @@
                 }
             };
 
-            var checkIfUspIsReady = function() {
+            var checkIfUspIsReady = function () {
                 uspTries++;
                 if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
                     console.warn('USP is not accessible');
@@ -170,15 +172,16 @@
 
 
         function injectGoogleAds() {
-            let script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.async = true;
-            script.crossOrigin = 'anonymous';
-            script.onload = function(){
-                console.log('Debug: Google Ads has loaded');
-            };
-            script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027';
-            document.getElementsByTagName('head')[0].appendChild(script);
+            // ***** Uncomment to enable Google Ads ***** //
+            // let script = document.createElement('script');
+            // script.type = 'text/javascript';
+            // script.async = true;
+            // script.crossOrigin = 'anonymous';
+            // script.onload = function () {
+            //     console.log('Debug: Google Ads has loaded');
+            // };
+            // script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027';
+            // document.getElementsByTagName('head')[0].appendChild(script);
         }
 
         // This sample code illustrate how to implement a addEventListener callback
@@ -187,7 +190,7 @@
         // your own needs.
         // Register the addEventListener at the beginning of your page load
         // after the CMP JS as been loaded
-        __tcfapi('addEventListener', 2, function(tcData, success) {
+        __tcfapi('addEventListener', 2, function (tcData, success) {
             if (success) {
                 if (tcData.gdprApplies) {
                     if (tcData.eventStatus === 'tcloaded') {
@@ -219,11 +222,71 @@
     </script>
     <!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
 
-    <!-- Start Google Ads -->
+    <!-- Start Google Ads AdSense -->
     <!-- Trying to load dynamically -->
     <!--    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027"-->
     <!--            crossorigin="anonymous"></script>-->
-    <!-- End Google Ads -->
+    <!-- End Google Ads AdSense -->
+
+    <!-- Ad.Plus -->
+    <script async src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+
+    <!-- Interstitial -->
+    <script>
+        window.googletag = window.googletag || {cmd: []};
+        googletag.cmd.push(function () {
+            var interstitialSlot = googletag.defineOutOfPageSlot('/21849154601,22868702959/Ad.Plus-Interstitial', googletag.enums.OutOfPageFormat.INTERSTITIAL);
+            if (interstitialSlot) interstitialSlot.addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+            googletag.display(interstitialSlot);
+        });
+    </script>
+
+
+    <!-- Anchor -->
+    <script>
+        window.googletag = window.googletag || {cmd: []};
+        var anchorSlot;
+        googletag.cmd.push(function () {
+            anchorSlot = googletag.defineOutOfPageSlot('21849154601,22868702959/Ad.Plus-Anchor', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
+            anchorSlot.addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+
+    <!-- Load stuff for responsive AD -->
+    <script>
+        var gptadslots = [];
+        var googletag = googletag || {cmd: []};
+        googletag.cmd.push(function () {
+            var responsiveads = googletag.sizeMapping()
+                .addSize([0, 0], [[336, 280], [300, 250], [250, 250], [320, 250], [320, 100], [320, 50], [300, 100], [300, 50]])
+                .addSize([750, 200], [[728, 90], [336, 280], [300, 250], [400, 300], [480, 320], [320, 250]])
+                .addSize([975, 200], [[728, 90], [970, 250], [336, 280], [300, 250], [400, 300], [480, 320], [320, 250], [980, 90], [980, 120]])
+                .build();
+            gptadslots.push(googletag.defineSlot('/21849154601,22868702959/Ad.Plus-AI-Responsive', [[336, 280]], 'responsive-1')
+                .defineSizeMapping(responsiveads)
+                .addService(googletag.pubads()));
+            googletag.pubads().setTargeting('site', ['goals.zone']);
+            googletag.enableServices();
+        });
+        const observer = new MutationObserver((mutations, obs) => {
+            const responsive1 = document.getElementById('responsive-1');
+            if (responsive1) {
+                console.log("Loaded responsive ad")
+                googletag.cmd.push(function() { googletag.display('responsive-1'); });
+                obs.disconnect();
+            }
+        });
+        observer.observe(document, {
+            childList: true,
+            subtree: true
+        });
+    </script>
+
+    <!-- END Ad.Plus -->
 
     <!-- Start Vidoomy -->
     <script type="text/javascript" src="https://ads.vidoomy.com/goalszone_19890.js" async></script>
