@@ -123,6 +123,8 @@ const MatchPage = (props: any) => {
                     {matchLoaded ? (
                             <>
                                 {header(match)}
+                                <div id="responsive-1" className="adplus-responsive">
+                                </div>
                                 {match && match.videos && match.videos.length > 0 ?
                                     <>
                                         <Accordion defaultActiveKey={activeId} flush className="fade-in">
