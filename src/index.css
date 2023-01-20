@@ -502,3 +502,7 @@ a.list-group-item.list-group-item-action {
 .team-link:hover .detail-score {
     color: white;
 }
+
+.adplus-responsive {
+    margin-bottom: 20px;
+}
