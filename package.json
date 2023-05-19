@@ -4,6 +4,10 @@
   "private": true,
   "homepage": "https://gzreact.meneses.pt",
   "dependencies": {
+    "@capacitor/android": "^5.0.3",
+    "@capacitor/cli": "^5.0.3",
+    "@capacitor/core": "^5.0.3",
+    "@capacitor/ios": "^5.0.3",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.65",
     "@types/react": "^18.0.21",
