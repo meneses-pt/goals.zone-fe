@@ -1,3 +1,11 @@
+# Instructions
+`npm run build`
+`npx cap sync ios`
+
+## To refresh/generate icons
+`npx capacitor-assets generate`
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

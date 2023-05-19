@@ -8,7 +8,7 @@ const InfoModal = (props: any) => {
     }
 
     return <>
-        <Modal show={props.isModalOpened} onHide={onModalClose}>
+        <Modal show={props.isModalOpened} onHide={onModalClose} className="main-modal">
             <Modal.Header closeButton>
                 <Modal.Title>Info</Modal.Title>
             </Modal.Header>

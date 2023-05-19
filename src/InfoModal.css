@@ -20,4 +20,9 @@
 
 .info-accordion .accordion-body {
     padding: 20px;
+    margin: calc(16px + env(safe-area-inset-top)) 16px 16px 16px;
+}
+
+.main-modal {
+    margin-top: calc(16px + env(safe-area-inset-top));
 }
