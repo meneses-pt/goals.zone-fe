@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.goals_zone",
+  "appName": "goals.zone",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "cordova": {}
+}
