@@ -325,8 +325,8 @@
     </script>
 
     <!-- Galaksion Pop-Under -->
-    <script data-cfasync="false" async type="text/javascript"
-            src="//meritedgasser.com/rTYki2100Bphn0hNg/65002"></script>
+    <!--    <script data-cfasync="false" async type="text/javascript"-->
+    <!--            src="//meritedgasser.com/rTYki2100Bphn0hNg/65002"></script>-->
     <!-- END Galaksion Pop-Under -->
 
 </head>
@@ -358,6 +358,26 @@
     })()
 </script>
 <!-- RollerAds END -->
+<!-- Galaksion Test -->
+<script async data-cfasync="false">
+    (function () {
+        const s = document.createElement("script");
+        s.dataset.cfasync = "false";
+        s.async = true;
+        s.src = "//meritedgasser.com/rTYki2100Bphn0hNg/65002";
+        s.type = "text/javascript"
+        const urlParams = new URLSearchParams(window.location.search);
+        const noadsParam = urlParams.get('noads');
+        console.log(noadsParam)
+        if (!noadsParam)
+        {
+            console.log("NOT NOADS PARAM");
+            document.head.appendChild(s);
+        }
+        console.log("AFTER NOT NOADS PARAM");
+    })()
+</script>
+<!-- Galaksion Test END -->
 <noscript>You need to enable JavaScript to run this app.</noscript>
 <div id="root"></div>
 <!--
