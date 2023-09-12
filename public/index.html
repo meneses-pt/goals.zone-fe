@@ -349,32 +349,31 @@
 <!-- Monetag END -->
 
 <!-- RollerAds -->
-<!-- Deactivated 2023-06-09 -->
-<!--<script async data-cfasync="false">-->
-<!--    (function () {-->
-<!--        const url = new URL(window.location.href);-->
-<!--        const clickID = url.searchParams.get("click_id");-->
-<!--        const sourceID = url.searchParams.get("source_id");-->
+<script async data-cfasync="false">
+    (function () {
+        const url = new URL(window.location.href);
+        const clickID = url.searchParams.get("click_id");
+        const sourceID = url.searchParams.get("source_id");
 
-<!--        const s = document.createElement("script");-->
-<!--        s.dataset.cfasync = "false";-->
-<!--        s.src = "https://system-notify.app/f/sdk.js?z=735652";-->
-<!--        s.onload = (opts) => {-->
-<!--            opts.zoneID = 735652;-->
-<!--            opts.extClickID = clickID;-->
-<!--            opts.subID1 = sourceID;-->
-<!--            opts.actions.onPermissionGranted = () => {-->
-<!--            };-->
-<!--            opts.actions.onPermissionDenied = () => {-->
-<!--            };-->
-<!--            opts.actions.onAlreadySubscribed = () => {-->
-<!--            };-->
-<!--            opts.actions.onError = () => {-->
-<!--            };-->
-<!--        };-->
-<!--        document.head.appendChild(s);-->
-<!--    })()-->
-<!--</script>-->
+        const s = document.createElement("script");
+        s.dataset.cfasync = "false";
+        s.src = "https://system-notify.app/f/sdk.js?z=735652";
+        s.onload = (opts) => {
+            opts.zoneID = 735652;
+            opts.extClickID = clickID;
+            opts.subID1 = sourceID;
+            opts.actions.onPermissionGranted = () => {
+            };
+            opts.actions.onPermissionDenied = () => {
+            };
+            opts.actions.onAlreadySubscribed = () => {
+            };
+            opts.actions.onError = () => {
+            };
+        };
+        document.head.appendChild(s);
+    })()
+</script>
 <!-- RollerAds END -->
 <noscript>You need to enable JavaScript to run this app.</noscript>
 <div id="root"></div>
