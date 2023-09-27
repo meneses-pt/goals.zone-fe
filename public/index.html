@@ -222,75 +222,80 @@
     </script>
     <!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
 
+    <!-- Start Refinery89 -->
+    <script src="https://tags.refinery89.com/goalszone.js" async></script>
+    <!-- End Refinery89 -->
+
     <!-- Start Google Ads AdSense -->
     <!-- Trying to load dynamically -->
     <!--    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027"-->
     <!--            crossorigin="anonymous"></script>-->
     <!-- End Google Ads AdSense -->
 
-    <!-- Ad.Plus -->
-    <script async src='https://www.googletagservices.com/tag/js/gpt.js'></script>
-    <!-- Ad.Plus Interstitial -->
-    <script>
-        window.googletag = window.googletag || {cmd: []};
-        googletag.cmd.push(function () {
-            var interstitialSlot = googletag.defineOutOfPageSlot('/21849154601,22868702959/Ad.Plus-Interstitial', googletag.enums.OutOfPageFormat.INTERSTITIAL);
-            if (interstitialSlot) interstitialSlot.addService(googletag.pubads());
-            googletag.pubads().enableSingleRequest();
-            googletag.enableServices();
-            googletag.display(interstitialSlot);
-        });
-    </script>
+    <!-- Ad.Plus START -->
+
+    <!--    <script async src='https://www.googletagservices.com/tag/js/gpt.js'></script>-->
+    <!--    &lt;!&ndash; Ad.Plus Interstitial &ndash;&gt;-->
+    <!--    <script>-->
+    <!--        window.googletag = window.googletag || {cmd: []};-->
+    <!--        googletag.cmd.push(function () {-->
+    <!--            var interstitialSlot = googletag.defineOutOfPageSlot('/21849154601,22868702959/Ad.Plus-Interstitial', googletag.enums.OutOfPageFormat.INTERSTITIAL);-->
+    <!--            if (interstitialSlot) interstitialSlot.addService(googletag.pubads());-->
+    <!--            googletag.pubads().enableSingleRequest();-->
+    <!--            googletag.enableServices();-->
+    <!--            googletag.display(interstitialSlot);-->
+    <!--        });-->
+    <!--    </script>-->
 
 
-    <!-- Ad.Plus Anchor -->
-    <script>
-        window.googletag = window.googletag || {cmd: []};
-        var anchorSlot;
-        googletag.cmd.push(function () {
-            anchorSlot = googletag.defineOutOfPageSlot('21849154601,22868702959/Ad.Plus-Anchor', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
-            anchorSlot.addService(googletag.pubads());
-            googletag.pubads().enableSingleRequest();
-            googletag.enableServices();
-        });
-    </script>
+    <!--    &lt;!&ndash; Ad.Plus Anchor &ndash;&gt;-->
+    <!--    <script>-->
+    <!--        window.googletag = window.googletag || {cmd: []};-->
+    <!--        var anchorSlot;-->
+    <!--        googletag.cmd.push(function () {-->
+    <!--            anchorSlot = googletag.defineOutOfPageSlot('21849154601,22868702959/Ad.Plus-Anchor', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);-->
+    <!--            anchorSlot.addService(googletag.pubads());-->
+    <!--            googletag.pubads().enableSingleRequest();-->
+    <!--            googletag.enableServices();-->
+    <!--        });-->
+    <!--    </script>-->
 
-    <!-- Ad.Plus Load stuff for responsive AD -->
-    <script>
-        var gptadslots = [];
-        var googletag = googletag || {cmd: []};
-        googletag.cmd.push(function () {
-            var responsiveads = googletag.sizeMapping()
-                .addSize([0, 0], [[336, 280], [300, 250], [250, 250], [320, 250], [320, 100], [320, 50], [300, 100], [300, 50]])
-                .addSize([750, 200], [[728, 90], [336, 280], [300, 250], [400, 300], [480, 320], [320, 250]])
-                .addSize([975, 200], [[728, 90], [970, 250], [336, 280], [300, 250], [400, 300], [480, 320], [320, 250], [980, 90], [980, 120]])
-                .build();
-            gptadslots.push(googletag.defineSlot('/21849154601,22868702959/Ad.Plus-AI-Responsive', [[336, 280]], 'responsive-1')
-                .defineSizeMapping(responsiveads)
-                .addService(googletag.pubads()));
-            googletag.pubads().setTargeting('site', ['goals.zone']);
-            googletag.enableServices();
-        });
-        const observer = new MutationObserver((mutations, obs) => {
-            const responsive1 = document.getElementById('responsive-1');
-            if (responsive1) {
-                console.log("Loaded responsive ad")
-                googletag.cmd.push(function () {
-                    googletag.display('responsive-1');
-                });
-                obs.disconnect();
-            }
-        });
-        observer.observe(document, {
-            childList: true,
-            subtree: true
-        });
-    </script>
+    <!--    &lt;!&ndash; Ad.Plus Load stuff for responsive AD &ndash;&gt;-->
+    <!--    <script>-->
+    <!--        var gptadslots = [];-->
+    <!--        var googletag = googletag || {cmd: []};-->
+    <!--        googletag.cmd.push(function () {-->
+    <!--            var responsiveads = googletag.sizeMapping()-->
+    <!--                .addSize([0, 0], [[336, 280], [300, 250], [250, 250], [320, 250], [320, 100], [320, 50], [300, 100], [300, 50]])-->
+    <!--                .addSize([750, 200], [[728, 90], [336, 280], [300, 250], [400, 300], [480, 320], [320, 250]])-->
+    <!--                .addSize([975, 200], [[728, 90], [970, 250], [336, 280], [300, 250], [400, 300], [480, 320], [320, 250], [980, 90], [980, 120]])-->
+    <!--                .build();-->
+    <!--            gptadslots.push(googletag.defineSlot('/21849154601,22868702959/Ad.Plus-AI-Responsive', [[336, 280]], 'responsive-1')-->
+    <!--                .defineSizeMapping(responsiveads)-->
+    <!--                .addService(googletag.pubads()));-->
+    <!--            googletag.pubads().setTargeting('site', ['goals.zone']);-->
+    <!--            googletag.enableServices();-->
+    <!--        });-->
+    <!--        const observer = new MutationObserver((mutations, obs) => {-->
+    <!--            const responsive1 = document.getElementById('responsive-1');-->
+    <!--            if (responsive1) {-->
+    <!--                console.log("Loaded responsive ad")-->
+    <!--                googletag.cmd.push(function () {-->
+    <!--                    googletag.display('responsive-1');-->
+    <!--                });-->
+    <!--                obs.disconnect();-->
+    <!--            }-->
+    <!--        });-->
+    <!--        observer.observe(document, {-->
+    <!--            childList: true,-->
+    <!--            subtree: true-->
+    <!--        });-->
+    <!--    </script>-->
 
     <!-- END Ad.Plus -->
 
     <!-- Start Vidoomy -->
-    <script type="text/javascript" src="https://ads.vidoomy.com/goalszone_19890.js" async></script>
+    <!--    <script type="text/javascript" src="https://ads.vidoomy.com/goalszone_19890.js" async></script>-->
     <!-- End Vidoomy -->
 
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
