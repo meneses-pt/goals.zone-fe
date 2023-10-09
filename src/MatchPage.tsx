@@ -43,7 +43,7 @@ const MatchPage = (props: any) => {
                 });
                 setMatch(res.data);
                 setMatchLoaded(true);
-                console.log(currentElementId);
+                //console.log(currentElementId);
                 if (currentElementId >= 0) {
                     setTimeout(() => {
                         let element = document.getElementById(`video${currentElementId}`);
