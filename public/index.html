@@ -8,15 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Start Refinery89 PART1/2 -->
-    <script>
-        if (window.location.href.indexOf("ads") > -1) {
-            console.log("Loading r89 part 1");
-            var r89 = r89 || {
-                initialize: function () {
-                    r89.pubInit = true;
-                }
-            }
+    <script>var r89 = r89 || {
+        initialize: function () {
+            r89.pubInit = true;
         }
+    }
     </script>
     <script src="https://tags.refinery89.com/goalszone.js" async></script>
     <!-- End Refinery89 PART1/2 -->
@@ -96,23 +92,19 @@
 -->
 <!-- Start Refinery89 PART2/2 -->
 <script>
-    if (window.location.href.indexOf("ads") > -1) {
-        console.log("Loading r89 part 2");
+    window.addEventListener("load", loadRefinery89, false);
 
-        window.addEventListener("load", loadRefinery89, false);
-
-        function loadRefinery89() {
-            const listElements = document.getElementsByClassName("list-group-item").length;
-            //console.log("List elements loaded: " + listElements)
-            if (listElements === 0) {
-                //console.log("Check for elements again in 100ms");
-                setTimeout(loadRefinery89, 100);
-            } else {
-                //console.log("Initializing R89!");
-                r89.initialize();
-                r89.reload();
-                //console.log("Initialized R89!");
-            }
+    function loadRefinery89() {
+        const listElements = document.getElementsByClassName('list-group-item').length;
+        //console.log("List elements loaded: " + listElements)
+        if (listElements === 0) {
+            //console.log("Check for elements again in 100ms");
+            setTimeout(loadRefinery89, 100);
+        } else {
+            //console.log("Initializing R89!");
+            r89.initialize();
+            r89.reload();
+            //console.log("Initialized R89!");
         }
     }
 </script>
