@@ -73,6 +73,8 @@ ad.plus, 22868702959, DIRECT
 # Phone Italy: +393342340817
 # Phone France: +33756925805
 
+OWNERDOMAIN=goals.zone
+MANAGERDOMAIN=refinery89.com
 
 #Adagio
 adagio.io,1117,RESELLER
@@ -144,10 +146,69 @@ pubmatic.com,160096,RESELLER,5d62403b186f2ace
 improvedigital.com,2050,RESELLER
 mediago.io,045ac24b888bcf59a09731e7f0f2084f,RESELLER
 adyoulike.com,7463c359225e043c111036d7a29affa5,RESELLER
+minutemedia.com,01gya4708ddm,RESELLER
+visiblemeasures.com,1052,RESELLER
+undertone.com,4205,RESELLER,d954590d0cb265b9
+admedia.com,AM1601,RESELLER
 
 #Appnexus
 appnexus.com,10112,RESELLER
 xandr.com,10112,RESELLER
+
+#Blockthrough
+blockthrough.com,5167541568143360,DIRECT
+google.com,pub-3792796726804880,RESELLER,f08c47fec0942fa0
+pubmatic.com,161023,RESELLER,5d62403b186f2ace
+rubiconproject.com,23720,RESELLER,0bfd66d529a55807
+indexexchange.com,196017,RESELLER,50b1c356f2c5c8fc
+sovrn.com,251666,DIRECT,fafdf38b16bf6b2b
+lijit.com,251666,DIRECT,fafdf38b16bf6b2b
+lijit.com,251666-eb,DIRECT,fafdf38b16bf6b2b
+gumgum.com,11645,RESELLER,ffdef49475d318a9
+openx.com,538959099,RESELLER,6a698e2ec38604c6
+openx.com,539924617,RESELLER,6a698e2ec38604c6
+pubmatic.com,137711,RESELLER,5d62403b186f2ace
+pubmatic.com,156212,RESELLER,5d62403b186f2ace
+pubmatic.com,156700,RESELLER,5d62403b186f2ace
+rubiconproject.com,17960,RESELLER,0bfd66d529a55807
+onetag.com,75804861b76a852-OB,DIRECT
+appnexus.com,13099,RESELLER
+yahoo.com,58905,RESELLER,e1a5b5b6e3255540
+pubmatic.com,161593,RESELLER,5d62403b186f2ace
+rubiconproject.com,11006,RESELLER,0bfd66d529a55807
+smartadserver.com,4111,RESELLER
+aax.media,AAXA1OS6M,DIRECT
+amxrtb.com,105199486,RESELLER
+appnexus.com,12290,RESELLER,f5ab79cb980f11d1
+appnexus.com,11786,RESELLER,f5ab79cb980f11d1
+yahoo.com,49648,RESELLER
+indexexchange.com,191503,RESELLER,50b1c356f2c5c8fc
+lijit.com,260380,RESELLER,fafdf38b16bf6b2b
+sovrn.com,260380,RESELLER,fafdf38b16bf6b2b
+appnexus.com,9393,RESELLER#Video#Display,f5ab79cb980f11d1
+appnexus.com,11924,RESELLER,f5ab79cb980f11d1
+rubiconproject.com,23844,DIRECT,0bfd66d529a55807
+smartadserver.com,3056,DIRECT
+pubmatic.com,161527,RESELLER,5d62403b186f2ace
+adform.com,2865,RESELLER
+152media.info,152M1,RESELLER
+appnexus.com,3153,RESELLER,f5ab79cb980f11d1
+onetag.com,66d66dec41ef0cc,RESELLER
+openx.com,543731411,RESELLER,6a698e2ec38604c6
+pubmatic.com,158984,RESELLER,5d62403b186f2ace
+sharethrough.com,aab3fb7d,RESELLER,d53b998a7bd4ecd2
+yahoo.com,59531,RESELLER,e1a5b5b6e3255540
+smaato.com,1100047713,RESELLER,07bcf65f187117b4
+rubiconproject.com,18694,RESELLER,0bfd66d529a55807
+33across.com,0013300001kQj2HAAS,RESELLER,bbea06d9c4d2853c
+spotxchange.com,212457,RESELLER
+spotx.tv,212457,RESELLER
+pubmatic.com,156557,RESELLER
+pubmatic.com,158723,RESELLER,5d62403b186f2ace
+openx.com,540274407,RESELLER,6a698e2ec38604c6
+smartadserver.com,4102,RESELLER
+smartadserver.com,4071,RESELLER
+contextweb.com,560288,RESELLER,89ff185a4c4e857c
 
 #ConnectAd.io
 connectad.io,304,DIRECT,85ac85a30c93b3e5
@@ -156,13 +217,6 @@ openx.com,537145117,RESELLER,6a698e2ec38604c6
 adform.com,768,RESELLER
 indexexchange.com,190906,DIRECT,50b1c356f2c5c8fc
 lijit.com,244287,DIRECT,fafdf38b16bf6b2b
-gumgum.com,11645,RESELLER,ffdef49475d318a9
-openx.com,538959099,RESELLER,6a698e2ec38604c6
-openx.com,539924617,RESELLER,6a698e2ec38604c6
-pubmatic.com,137711,RESELLER,5d62403b186f2ace
-pubmatic.com,156212,RESELLER,5d62403b186f2ace
-pubmatic.com,156700,RESELLER,5d62403b186f2ace
-rubiconproject.com,17960,RESELLER,0bfd66d529a55807
 onetag.com,5d4e109247a89f6,DIRECT
 advertising.com,28246,RESELLER
 
@@ -219,53 +273,10 @@ improvedigital.com,1236,RESELLER
 improvedigital.com,2138,RESELLER
 
 #In-image
-adform.com,1889,RESELLER
-adform.com,1941,DIRECT
-adform.com,1942,DIRECT
-adyoulike.com,83d15ef72d387a1e60e5a1399a2b0c03,DIRECT
-adyoulike.com,b4bf4fdd9b0b915f746f6747ff432bde,RESELLER
-appnexus.com,11664,RESELLER
-appnexus.com,13099,RESELLER
-appnexus.com,2928,DIRECT
-appnexus.com,3703,RESELLER,f5ab79cb980f11d1
-appnexus.com,8233,DIRECT
-axonix.com,57264,RESELLER
-contextweb.com,560520,RESELLER
-improvedigital.com,1680,DIRECT
-indexexchange.com,184349,RESELLER,50b1c356f2c5c8fc
-indexexchange.com,191730,RESELLER,50b1c356f2c5c8fc
-lijit.com,249425,RESELLER
-lijit.com,397546,DIRECT,fafdf38b16bf6b2b
-loopme.com,5679,RESELLER,6c8d5f95897a5a3b
-onetag.com,75601b04186d260,DIRECT
-openx.com,537149888,RESELLER,6a698e2ec38604c6
-openx.com,539625136,RESELLER
-openx.com,544096208,RESELLER,6a698e2ec38604c6
-pubmatic.com,155967,RESELLER,5d62403b186f2ace
-pubmatic.com,156439,RESELLER,5d62403b186f2ace
-pubmatic.com,156538,RESELLER,5d62403b186f2ace
-pubmatic.com,157743,DIRECT,5d62403b186f2ace
-pubmatic.com,81564,RESELLER,5d62403b186f2ace
-rhythmone.com,2564526802,RESELLER,a670c89d4a324e47
-richaudience.com,ns9qrKJLKD,DIRECT
-rubiconproject.com,11006,RESELLER,0bfd66d529a55807
-rubiconproject.com,13510,DIRECT
-rubiconproject.com,16114,RESELLER,0bfd66d529a55807
-rubiconproject.com,17250,RESELLER,0bfd66d529a55807
-rubiconproject.com,17280,DIRECT,0bfd66d529a55807
-smaato.com,1100044045,RESELLER,07bcf65f187117b4
-smartadserver.com,2441,RESELLER
-smartadserver.com,2640,RESELLER
-smartadserver.com,3050,DIRECT
-smartadserver.com,4111,RESELLER
-sovrn.com,249425,RESELLER
-sovrn.com,397546,DIRECT,fafdf38b16bf6b2b
-triplelift.com,2792,RESELLER,6c33edb13117fd86
-verve.com,15503,RESELLER,0c8f5958fc2d6270
 xandr.com,4009,DIRECT,f5ab79cb980f11d1
-yahoo.com,57857,RESELLER,e1a5b5b6e3255540
-yahoo.com,58578,DIRECT,e1a5b5b6e3255540
-yahoo.com,58905,RESELLER,e1a5b5b6e3255540
+smartadserver.com,3050,DIRECT
+pubmatic.com,157743,DIRECT,5d62403b186f2ace
+rubiconproject.com,17280,DIRECT,0bfd66d529a55807
 seedtag.com,5c93693d50e6db0900511b16,DIRECT
 seedtag.com,612f58798516c10800f5eee9,DIRECT
 seedtag.com,623dbb3b24c5f9080060e27b,DIRECT
@@ -277,28 +288,7 @@ seedtag.com,623c7b25ce956c07002f18f0,DIRECT
 seedtag.com,61544656a6bc7607006e1a61,DIRECT
 seedtag.com,61b1f07b9f0448080016eac4,DIRECT
 seedtag.com,62f1033d3a38890700b1a654,DIRECT
-xandr.com,4009,DIRECT
-openx.com,558758631,RESELLER,6a698e2ec38604c6
-spotxchange.com,249286,DIRECT,7842df1d2fe2db34
-spotx.tv,249286,DIRECT,7842df1d2fe2db34
-districtm.io,101760,DIRECT,3fd707be9c4527c3
-33across.com,0010b00002MptHCAAZ,DIRECT,bbea06d9c4d2853c
-indexexchange.com,191730,RESELLER
-improvedigital.com,1680,RESELLER
-aol.com,58578,DIRECT,e1a5b5b6e3255540
-adform.com,1889,RESELLER,9f5210a2f0999e32
-advertising.com,29034,DIRECT
-contextweb.com,560288,DIRECT,89ff185a4c4e857c
-openx.com,537149888,DIRECT,6a698e2ec38604c6
-advertising.com,7574,DIRECT
-aerserv.com,2750,DIRECT,2ce496b9f80eb9fa
-aolcloud.net,4687,DIRECT
-mobfox.com,74240,DIRECT
-openx.com,539625136,DIRECT
-smaato.com,1100037086,DIRECT
-smartadserver.com,2938,DIRECT
-spotxchange.com,230037,RESELLER,7842df1d2fe2db34
-spotx.tv,230037,RESELLER,7842df1d2fe2db34
+seedtag.com,64e48c7f7b8c5d0007d58717,DIRECT
 
 #Index Exchange
 indexexchange.com,186156,DIRECT
@@ -335,30 +325,11 @@ gumgum.com,15210,DIRECT,ffdef49475d318a9
 justpremium.com,146,DIRECT
 
 #Media.net
-media.net,8CUQQRP37,DIRECT
-media.net,8CU3GWXE7,DIRECT
-openx.com,537100188,RESELLER,6a698e2ec38604c6
+Media.net,8CU3GWXE7,DIRECT
 pubmatic.com,159463,RESELLER,5d62403b186f2ace
-emxdgt.com,1759,RESELLER,1e1d41537f7cad7f
-google.com,pub-7439041255533808,RESELLER,f08c47fec0942fa0
+Media.net,8CUQQRP37,DIRECT
 rubiconproject.com,19396,RESELLER,0bfd66d529a55807
 onetag.com,5d49f482552c9b6,RESELLER
-sonobi.com,83729e979b,RESELLER
-33across.com,0010b00002cGp2AAAS,RESELLER,bbea06d9c4d2853c
-rhythmone.com,3611299104,RESELLER
-districtm.io,100600,RESELLER
-lemmatechnologies.com,399,RESELLER,7829010c5bebd1fb
-e-planning.net,ec771b05828a67fa,RESELLER,c1ba615865ed87b2
-google.com,pub-9685734445476814,RESELLER,f08c47fec0942fa0
-
-#Mobfox
-uis.mobfox.com,1755,DIRECT,5529a3d1f59865be
-pubmatic.com,156451,RESELLER,5d62403b186f2ace
-inmobi.com,a5e661acdc384e91a79a58eb3418e99f,RESELLER,83e75a7ae333ca9d
-silvermob.com,357,RESELLER
-aceex.io,6,RESELLER
-freewheel.tv,848065,RESELLER
-ucfunnel.com,par-BE7E29B3B48DE66BC7DDDA24E6267E29,RESELLER
 
 #Next Millennium
 nextmillennium.io,16175,DIRECT,65bd090fa4a1e3d6
@@ -386,7 +357,6 @@ appnexus.com,11470,RESELLER
 
 #OneTag
 onetag.com,76fa0fedc93058d-OB,DIRECT
-pubmatic.com,161593,RESELLER,5d62403b186f2ace
 
 #Outbrain
 tremorhub.com,q017o-78mlk,RESELLER,1a4e959a1b50034a
@@ -429,8 +399,31 @@ pubmatic.com,160626,RESELLER,5d62403b186f2ace
 pubmatic.com,160627,RESELLER,5d62403b186f2ace
 
 #Rich Audience
-richaudience.com,DENuKPDBv5,DIRECT
-indexexchange.com,201092,RESELLER,50b1c356f2c5c8fc
+google.com,pub-4673227357197067,RESELLER,f08c47fec0942fa0
+pubmatic.com,81564,RESELLER,5d62403b186f2ace
+pubmatic.com,156538,RESELLER,5d62403b186f2ace
+rubiconproject.com,13510,RESELLER
+appnexus.com,2928,RESELLER
+appnexus.com,8233,RESELLER
+telaria.com,cpu32-92xut,RESELLER,1a4e959a1b50034a
+tremorhub.com,cpu32-92xut,RESELLER,1a4e959a1b50034a
+smartadserver.com,1999-OB,RESELLER,060d053dcf45cbf3
+smartadserver.com,1999,RESELLER,060d053dcf45cbf3
+google.com,pub-8221793852898543,RESELLER,f08c47fec0942fa0
+adform.com,2631,RESELLER,9f5210a2f0999e32
+pubmatic.com,156136,RESELLER,5d62403b186f2ace
+appnexus.com,1199,RESELLER,f5ab79cb980f11d1
+rubiconproject.com,22328,RESELLER,0bfd66d529a55807
+google.com,pub-2128757167812663,RESELLER,f08c47fec0942fa0
+pubmatic.com,156383,RESELLER,5d62403b186f2ace
+adform.com,2474,RESELLER,9f5210a2f0999e32
+rubiconproject.com,17210,RESELLER,0bfd66d529a55807
+rubiconproject.com,20266,RESELLER,0bfd66d529a55807
+appnexus.com,10264,RESELLER,f5ab79cb980f11d1
+criteo.com,B-060278,RESELLER,9fac4a4a87c2a44f
+themediagrid.com,VIY354,RESELLER,35d5010d7789b49d
+smartadserver.com,1743,RESELLER,060d053dcf45cbf3
+indexexchange.com,192051,RESELLER
 
 #RISE
 risecodes.com,65143afa894fce00014f2211,DIRECT
@@ -480,20 +473,24 @@ yahoo.com,59244,RESELLER
 #Sharethrough.com
 sharethrough.com,O9zwa7JD,RESELLER,d53b998a7bd4ecd2
 sharethrough.com,urSaPihh,RESELLER,d53b998a7bd4ecd2
-pubmatic.com,156557,RESELLER
-rubiconproject.com,18694,RESELLER,0bfd66d529a55807
-openx.com,540274407,RESELLER,6a698e2ec38604c6
-33across.com,0013300001kQj2HAAS,RESELLER,bbea06d9c4d2853c
-smaato.com,1100047713,RESELLER,07bcf65f187117b4
-yahoo.com,59531,RESELLER,e1a5b5b6e3255540
 smartadserver.com,4342,RESELLER
 
 #Smart Adserver
 smartadserver.com,3305-OB,RESELLER,060d053dcf45cbf3
+pubmatic.com,156439,RESELLER,5d62403b186f2ace
 pubmatic.com,154037,RESELLER,5d62403b186f2ace
+rubiconproject.com,16114,RESELLER,0bfd66d529a55807
 sharethrough.com,OAW69Fon,RESELLER,d53b998a7bd4ecd2
+openx.com,537149888,RESELLER,6a698e2ec38604c6
+appnexus.com,3703,RESELLER,f5ab79cb980f11d1
+loopme.com,5679,RESELLER,6c8d5f95897a5a3b
 xad.com,958,RESELLER,81cbf0a75a5e0e9a
+rhythmone.com,2564526802,RESELLER,a670c89d4a324e47
+smaato.com,1100044045,RESELLER,07bcf65f187117b4
 pubnative.net,1006576,RESELLER,d641df8625486a7b
+verve.com,15503,RESELLER,0c8f5958fc2d6270
+adyoulike.com,b4bf4fdd9b0b915f746f6747ff432bde,RESELLER
+axonix.com,57264,RESELLER
 admanmedia.com,43,RESELLER
 smartadserver.com,4016,DIRECT
 smartadserver.com,4012,DIRECT
