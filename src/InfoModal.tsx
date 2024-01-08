@@ -55,6 +55,15 @@ const InfoModal = (props: any) => {
                             </p>
                         </Accordion.Body>
                     </Accordion.Item>
+                    <Accordion.Item eventKey="2">
+                        <Accordion.Header>Privacy Policy</Accordion.Header>
+                        <Accordion.Body>
+                            <p>
+                                You can visit our Privacy Policy <a
+                                href="https://goals.zone/privacy_policy.html">here</a>
+                            </p>
+                        </Accordion.Body>
+                    </Accordion.Item>
                 </Accordion>
             </Modal.Body>
         </Modal>
