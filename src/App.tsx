@@ -12,7 +12,6 @@ function App() {
         <Nav/>
         <Routes>
             <Route path="/" element={<Matches/>}/>
-            <Route path="ads" element={<Matches/>}/>
             <Route path="/:slug" element={<MatchPage/>}/>
             <Route path="teams" element={<Teams/>}/>
             <Route path="teams/:slug" element={<TeamPage/>}/>

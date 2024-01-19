@@ -7,18 +7,9 @@
     <meta http-equiv="Content-Language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script>
-        if (window.location.href.indexOf("ads") > -1) {
-            const head = document.getElementsByTagName('head')[0];
-            const js = document.createElement("script");
-
-            js.type = "text/javascript";
-            js.src = "//widgets.outbrain.com/outbrain.js";
-            js.async = "async"
-
-            head.appendChild(js);
-        }
-    </script>
+    <!-- Start Outbrain PART1/2 -->
+    <!--    <script type="text/javascript" async="async" src="//widgets.outbrain.com/outbrain.js"></script>-->
+    <!-- End Outbrain PART1/2 -->
 
     <!-- Start Refinery89 PART1/2 -->
     <!--    <script>var r89 = r89 || {-->
@@ -94,7 +85,10 @@
 <noscript>You need to enable JavaScript to run this app.</noscript>
 <div id="root">
 </div>
-<aside><div class="OUTBRAIN" data-widget-id="CR_SFD_MAIN_1"></div></aside>
+<!-- Start Outbrain PART2/2 -->
+<!--<aside><div class="OUTBRAIN" data-widget-id="CR_SFD_MAIN_1"></div></aside>-->
+<!-- END Refinery89 PART2/2 -->
+
 <!--
   This HTML file is a template.
   If you open it directly in the browser, you will see an empty page.
@@ -105,6 +99,7 @@
   To begin the development, run `npm start` or `yarn start`.
   To create a production bundle, use `npm run build` or `yarn build`.
 -->
+
 <!-- Start Refinery89 PART2/2 -->
 <!--<script>-->
 <!--    function loadRefinery89() {-->
@@ -124,5 +119,15 @@
 <!--    loadRefinery89();-->
 <!--</script>-->
 <!-- END Refinery89 PART2/2 -->
+
+<!-- Start adcash -->
+<script type="text/javascript">
+    aclib.runAutoTag({
+        zoneId: 'mnlzffaiis',
+    });
+</script>
+<!-- End adcash -->
+
+
 </body>
 </html>
