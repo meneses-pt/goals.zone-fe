@@ -7,14 +7,16 @@
     <meta http-equiv="Content-Language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <script type="text/javascript" async="async" src="//widgets.outbrain.com/outbrain.js"></script>
+
     <!-- Start Refinery89 PART1/2 -->
-    <script>var r89 = r89 || {
-        initialize: function () {
-            r89.pubInit = true;
-        }
-    }
-    </script>
-    <script src="https://tags.refinery89.com/goalszone.js" async></script>
+    <!--    <script>var r89 = r89 || {-->
+    <!--        initialize: function () {-->
+    <!--            r89.pubInit = true;-->
+    <!--        }-->
+    <!--    }-->
+    <!--    </script>-->
+    <!--    <script src="https://tags.refinery89.com/goalszone.js" async></script>-->
     <!-- End Refinery89 PART1/2 -->
 
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
@@ -79,7 +81,9 @@
 <!-- RollerAds END -->
 
 <noscript>You need to enable JavaScript to run this app.</noscript>
-<div id="root"></div>
+<div id="root">
+    <aside><div class="OUTBRAIN" data-widget-id="CR_SFD_MAIN_1"></div></aside>
+</div>
 <!--
   This HTML file is a template.
   If you open it directly in the browser, you will see an empty page.
@@ -91,22 +95,23 @@
   To create a production bundle, use `npm run build` or `yarn build`.
 -->
 <!-- Start Refinery89 PART2/2 -->
-<script>
-    function loadRefinery89() {
-        const listElements = document.getElementsByClassName('list-group-item').length;
-        console.log("List elements loaded: " + listElements)
-        if (listElements === 0) {
-            console.log("Check for elements again in 100ms");
-            setTimeout(loadRefinery89, 100);
-        } else {
-            console.log("Initializing R89!");
-            r89.initialize();
-            r89.reload();
-            console.log("Initialized R89!");
-        }
-    }
-    loadRefinery89();
-</script>
+<!--<script>-->
+<!--    function loadRefinery89() {-->
+<!--        const listElements = document.getElementsByClassName('list-group-item').length;-->
+<!--        console.log("List elements loaded: " + listElements)-->
+<!--        if (listElements === 0) {-->
+<!--            console.log("Check for elements again in 100ms");-->
+<!--            setTimeout(loadRefinery89, 100);-->
+<!--        } else {-->
+<!--            console.log("Initializing R89!");-->
+<!--            r89.initialize();-->
+<!--            r89.reload();-->
+<!--            console.log("Initialized R89!");-->
+<!--        }-->
+<!--    }-->
+
+<!--    loadRefinery89();-->
+<!--</script>-->
 <!-- END Refinery89 PART2/2 -->
 </body>
 </html>
