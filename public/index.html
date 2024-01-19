@@ -7,7 +7,18 @@
     <meta http-equiv="Content-Language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script type="text/javascript" async="async" src="//widgets.outbrain.com/outbrain.js"></script>
+    <script>
+        if (window.location.href.indexOf("ads") > -1) {
+            const head = document.getElementsByTagName('head')[0];
+            const js = document.createElement("script");
+
+            js.type = "text/javascript";
+            js.src = "//widgets.outbrain.com/outbrain.js";
+            js.async = "async"
+
+            head.appendChild(js);
+        }
+    </script>
 
     <!-- Start Refinery89 PART1/2 -->
     <!--    <script>var r89 = r89 || {-->
