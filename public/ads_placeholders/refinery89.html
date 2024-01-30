@@ -1,0 +1,33 @@
+<!-- Top of HEAD -->
+<!-- Start Refinery89 PART1/2 -->
+<script>var r89 = r89 || {
+    initialize: function () {
+        r89.pubInit = true;
+    }
+}
+</script>
+<script src="https://tags.refinery89.com/goalszone.js" async></script>
+<!-- End Refinery89 PART1/2 -->
+
+
+
+<!-- Last thing in Body -->
+<!-- Start Refinery89 PART2/2 -->
+<script>
+    function loadRefinery89() {
+        const listElements = document.getElementsByClassName('list-group-item').length;
+        console.log("List elements loaded: " + listElements)
+        if (listElements === 0) {
+            console.log("Check for elements again in 100ms");
+            setTimeout(loadRefinery89, 100);
+        } else {
+            console.log("Initializing R89!");
+            r89.initialize();
+            r89.reload();
+            console.log("Initialized R89!");
+        }
+    }
+
+    loadRefinery89();
+</script>
+<!-- END Refinery89 PART2/2 -->

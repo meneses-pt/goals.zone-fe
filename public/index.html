@@ -7,19 +7,13 @@
     <meta http-equiv="Content-Language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Start AdCash PART1/2 -->
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+    <!-- End AdCash PART1/2 -->
+
     <!-- Start Outbrain PART1/2 -->
     <script type="text/javascript" async="async" src="//widgets.outbrain.com/outbrain.js"></script>
     <!-- End Outbrain PART1/2 -->
-
-    <!-- Start Refinery89 PART1/2 -->
-    <script>var r89 = r89 || {
-        initialize: function () {
-            r89.pubInit = true;
-        }
-    }
-    </script>
-    <script src="https://tags.refinery89.com/goalszone.js" async></script>
-    <!-- End Refinery89 PART1/2 -->
 
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -82,6 +76,15 @@
 </script>
 <!-- RollerAds END -->
 
+<!-- Start AdCash PART2/2 -->
+<script type="text/javascript">
+    aclib.runAutoTag({
+        zoneId: 'zzw24tptww',
+    });
+</script>
+<!-- End AdCash PART2/2 -->
+
+
 <noscript>You need to enable JavaScript to run this app.</noscript>
 <div id="root">
 </div>
@@ -101,26 +104,6 @@
   To begin the development, run `npm start` or `yarn start`.
   To create a production bundle, use `npm run build` or `yarn build`.
 -->
-
-<!-- Start Refinery89 PART2/2 -->
-<script>
-    function loadRefinery89() {
-        const listElements = document.getElementsByClassName('list-group-item').length;
-        console.log("List elements loaded: " + listElements)
-        if (listElements === 0) {
-            console.log("Check for elements again in 100ms");
-            setTimeout(loadRefinery89, 100);
-        } else {
-            console.log("Initializing R89!");
-            r89.initialize();
-            r89.reload();
-            console.log("Initialized R89!");
-        }
-    }
-
-    loadRefinery89();
-</script>
-<!-- END Refinery89 PART2/2 -->
 
 </body>
 </html>
