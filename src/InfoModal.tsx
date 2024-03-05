@@ -64,6 +64,15 @@ const InfoModal = (props: any) => {
                             </p>
                         </Accordion.Body>
                     </Accordion.Item>
+                    <Accordion.Item eventKey="3">
+                        <Accordion.Header>Terms & Conditions</Accordion.Header>
+                        <Accordion.Body>
+                            <p>
+                                You can visit our Terms & Conditions <a
+                                href="https://goals.zone/terms_conditions.html">here</a>
+                            </p>
+                        </Accordion.Body>
+                    </Accordion.Item>
                 </Accordion>
             </Modal.Body>
         </Modal>
