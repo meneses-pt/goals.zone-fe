@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import InfoModal from "./InfoModal";
 import "./Nav.css";
 
@@ -12,6 +12,27 @@ const Nav = () => {
     function handleCloseInfoModal() {
         setInfoModalIsOpen(false);
     }
+
+    //Monetag START
+    useEffect(() => {
+        const monetagElement = document.getElementById("monetag");
+        if (monetagElement !== null) {
+            return;
+        }
+        const navElement = document.querySelector('nav');
+        const script = document.createElement("script");
+        script.id = "monetag"
+        script.async = true;
+        script.setAttribute("data-cfasync", "false");
+        script.setAttribute("data-size", "300x250");
+        script.setAttribute("data-id", "dl-banner-300x250");
+        script.setAttribute("data-zone", "7329187");
+        script.src = "//thepsimp.net/btag.min.js";
+        if (navElement) {
+            navElement.insertAdjacentElement('afterend', script);
+        }
+    }, []);
+    //Monetag END
 
     return <>
         <nav className="navbar navbar-dark bg-dark">
