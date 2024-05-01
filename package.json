@@ -8,7 +8,7 @@
     "@types/node": "^16.11.65",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
-    "axios": "^1.1.2",
+    "axios": "^1.6.8",
     "bootswatch": "^5.2.2",
     "eslint-config-react-app": "^7.0.1",
     "lato-font": "^3.0.0",
