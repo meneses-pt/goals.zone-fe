@@ -19,6 +19,12 @@ const useTeams = (slug: string, offset: number = 0) => {
 
         getTeamDetail(slug, offset, {signal})
             .then(data => {
+                console.log("BEFORE MATCHES")
+                console.log(data.matches)
+                console.log("AFTER MATCHES")
+                if(data.matches === null){
+                    data.matches = []
+                }
                 setTeamData(data);
                 setResults(prev => [...prev, ...data.matches]);
                 setHasNextPage(Boolean(data.matches.length));

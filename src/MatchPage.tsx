@@ -35,6 +35,9 @@ const MatchPage = (props: any) => {
             if (res.success) {
                 document.title = `goals.zone • ${res.data.home_team.name} - ${res.data.away_team.name} `;
                 let currentElementId = -1;
+                if(res.data.videos === null) {
+                    res.data.videos = []
+                }
                 res.data.videos.forEach((v: any, i: number) => {
                     if (v.simple_permalink === permalinkParam) {
                         currentElementId = i;
