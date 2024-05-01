@@ -25,7 +25,8 @@
   },
   "overrides": {
     "postcss": "^8.4.31",
-    "nth-check": "^2.0.1"
+    "nth-check": "^2.0.1",
+    "workbox-google-analytics": "^7.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
