@@ -5,7 +5,7 @@
   "homepage": "https://gzreact.meneses.pt",
   "dependencies": {
     "@types/jest": "^29.5.12",
-    "@types/node": "^20.12.7",
+    "@types/node": "^22.5.5",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "axios": "^1.6.8",
@@ -19,9 +19,9 @@
     "react-router-dom": "^6.23.0",
     "react-scripts": "^5.0.1",
     "react-select": "^5.8.0",
-    "react-spinners": "^0.13.8",
-    "typescript": "^4.9.2",
-    "web-vitals": "^3.5.2"
+    "react-spinners": "^0.14.1",
+    "typescript": "^4.9.3",
+    "web-vitals": "^4.2.3"
   },
   "overrides": {
     "postcss": "^8.4.31",
