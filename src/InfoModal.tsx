@@ -23,7 +23,7 @@ const InfoModal = (props: any) => {
                                 videos of goals and that correspond to a football match.
                             </p>
                             <p>
-                                The code React project is available at <a href="https://github.com/meneses-pt/goals.zone-fe">goals.zone-fe</a>
+                                The Front End project source code is available at <a href="https://github.com/meneses-pt/goals.zone-fe">goals.zone-fe</a>
                             </p>
                             <p>
                                 You can reach me at <a href="mailto:andre@meneses.pt">andre@meneses.pt</a>
