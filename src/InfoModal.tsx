@@ -22,9 +22,9 @@ const InfoModal = (props: any) => {
                                 from <a href="https://www.reddit.com/r/soccer">/r/soccer</a> subreddit that contains
                                 videos of goals and that correspond to a football match.
                             </p>
-                            <span>
-                                The code for the FE part of this project is available at <a href="https://github.com/meneses-pt/goals.zone-fe">goals.zone-fe</a>
-                            </span>
+                            <p>
+                                The code React project is available at <a href="https://github.com/meneses-pt/goals.zone-fe">goals.zone-fe</a>
+                            </p>
                             <p>
                                 You can reach me at <a href="mailto:andre@meneses.pt">andre@meneses.pt</a>
                             </p>
