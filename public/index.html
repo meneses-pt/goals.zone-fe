@@ -37,10 +37,6 @@
         gtag('config', 'G-BJJWR6H9Q7');
     </script>
 
-    <!-- AdSense START -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8520909641604027" crossorigin="anonymous"></script>
-    <!-- AdSense END -->
-
 </head>
 <body>
 
@@ -76,6 +72,56 @@
 <noscript>You need to enable JavaScript to run this app.</noscript>
 <div id="root">
 </div>
+<!-- For AdsTerra START -->
+<div class="floating-div">
+    <script type="text/javascript">
+        atOptions = {
+            'key' : 'ecbd8e6f3144ae4b1e78762618f9fd92',
+            'format' : 'iframe',
+            'height' : 50,
+            'width' : 320,
+            'params' : {}
+        };
+    </script>
+    <script type="text/javascript" src="//politicalpiano.com/ecbd8e6f3144ae4b1e78762618f9fd92/invoke.js"></script>
+</div>
+<script>
+    atOptions = {
+        'key' : '9f05cb81a16b93de4a5c66e9959c88e6',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+    };
+    function injectScriptToClass(className) {
+        // Try to find elements with the specified class
+        const elements = document.getElementsByClassName(className);
+
+        // If no elements found, try again after a short delay
+        if (elements.length === 0) {
+            setTimeout(() => injectScriptToClass(className), 250); // Try again in 1 second
+            return;
+        }
+
+        // Create the script element
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = '//politicalpiano.com/9f05cb81a16b93de4a5c66e9959c88e6/invoke.js';
+
+        // Inject the script into each element
+        for(let element of elements) {
+            const scriptClone = script.cloneNode(true);
+            element.appendChild(scriptClone);
+        }
+
+        console.log(`Successfully injected script into ${elements.length} element(s)`);
+    }
+
+    // Start the process immediately
+    injectScriptToClass('ad-container');
+</script>
+<!-- For AdsTerra END -->
+
 
 <!--
   This HTML file is a template.

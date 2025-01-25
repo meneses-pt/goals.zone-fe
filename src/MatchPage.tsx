@@ -112,6 +112,9 @@ const MatchPage = (props: any) => {
                     <p className="desktop-spacing">&nbsp;{convertToDateTimeStr(match.datetime)}</p>
                 </h3>
             </div>
+            {/* AdsTerra START */}
+            <div className="ad-container"></div>
+            {/* AdsTerra END */}
         </>
     );
 
