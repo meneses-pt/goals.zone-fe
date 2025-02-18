@@ -506,14 +506,3 @@ a.list-group-item.list-group-item-action {
 .adplus-responsive {
     margin-bottom: 20px;
 }
-
-.floating-div {
-    /* For 1xbet */
-    position: fixed;
-    bottom: 0; /* Distance from bottom */
-    left: 50%;
-    transform: translateX(-50%);
-    /* Optional styling */
-    padding: 0;
-    z-index: 1000;
-}

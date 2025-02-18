@@ -53,9 +53,6 @@ const Matches = () => {
                         </div>
                         <ul className="list-group infinite-container fade-in">
                             <WeekSearch />
-                            {/* 1xbet START */}
-                            <div className="ad-container" style={{marginTop: '10px'}}></div>
-                            {/* 1xbet END */}
                             {content}
                         </ul>
                         {isLoading && <PuffLoader cssOverride={overrideSpinner} color="#00bc8c"/>}
