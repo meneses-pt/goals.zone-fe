@@ -5,9 +5,14 @@ import "./Video.css";
 
 const Video = ({video}: any) => {
     const handleHeaderClick = (event: React.MouseEvent) => {
+        // Auto-open if exactly 1 mirror
         if (video.mirrors.length === 1) {
             event.preventDefault();
-            window.open(video.mirrors[0].url, "_blank");
+            try {
+                window.open(video.mirrors[0].url, "_blank", 'noopener,noreferrer');
+            } catch (e) {
+                console.warn('Failed to open single mirror', e);
+            }
         }
     };
 

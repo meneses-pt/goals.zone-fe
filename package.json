@@ -31,7 +31,8 @@
   "scripts": {
     "start": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "upgrade": "npm install --save-dev npm-check-updates && npx npm-check-updates -u && npm install"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +54,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.1.0",
+    "npm-check-updates": "^19.1.2",
     "vite": "^7.1.12"
   }
 }

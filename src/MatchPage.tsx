@@ -9,11 +9,41 @@ import {getMatchDetail} from "./services/goalsZone.service";
 import {convertToDateTimeStr} from "./utils/utils";
 import Video from "./Video";
 
-const MatchPage = (props: any) => {
+const MatchPage = () => {
     const [match, setMatch] = useState<any>(null);
     const [matchLoaded, setMatchLoaded] = useState(false);
     const [activeId, setActiveId] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
+    const [openAllClickCount, setOpenAllClickCount] = useState(0); // 0 = not clicked, 1 = opened once, 2 = warning shown
+
+    // Collect first mirror URLs (dedupe to avoid duplicate tabs)
+    const getFirstMirrorUrls = (): string[] => {
+        if (!match || !match.videos) return [];
+        const setUrls = new Set<string>();
+        match.videos.forEach((v: any) => {
+            const url = v?.mirrors?.[0]?.url;
+            if (url) setUrls.add(url);
+        });
+        return Array.from(setUrls);
+    };
+
+    const openAllFirstMirrors = () => {
+        const urls = getFirstMirrorUrls();
+        if (urls.length === 0) return;
+        if (openAllClickCount === 0 && urls.length > 6) {
+            const proceed = window.confirm(`Open ${urls.length} unique video tabs?`);
+            if (!proceed) return;
+        }
+        urls.forEach(url => {
+            try { window.open(url, '_blank', 'noopener,noreferrer'); } catch (e) { console.warn('Failed to open', url, e); }
+        });
+        if (openAllClickCount === 0) {
+            setOpenAllClickCount(1);
+        } else if (openAllClickCount === 1) {
+            setOpenAllClickCount(2); // second click triggers warning display
+        }
+        // Further clicks (>=2) keep warning; still open tabs each time
+    };
 
     let {slug} = useParams();
     const search = useLocation().search;
@@ -124,31 +154,37 @@ const MatchPage = (props: any) => {
             <div className="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content bottom-margin top-padding">
                 <div className="container">
                     {matchLoaded ? (
-                            <>
-                                {header(match)}
-                                <div id="responsive-1" className="adplus-responsive">
-                                </div>
-                                {match && match.videos && match.videos.length > 0 ?
-                                    <>
-                                        <Accordion defaultActiveKey={activeId} flush className="fade-in">
-                                            {match.videos.map((v: any, i: number) => {
-                                                v.index = i;
-                                                return <Video id={`video${i}`}
-                                                              key={`video${i}`}
-                                                              video={v}/>;
-                                            })}
-                                        </Accordion>
-                                    </>
-                                    :
-                                    noVideos}
-                            </>
-                        )
-                        :
-                        (error !== null ?
-                                <ErrorMessage message={error}/> :
-                                <PuffLoader cssOverride={overrideSpinner} color="#00bc8c"/>
-                        )
-                    }
+                        <>
+                            {header(match)}
+                            <div id="responsive-1" className="adplus-responsive" />
+                            {match && match.videos && match.videos.length > 0 ? (
+                                <>
+                                    <div className="mb-2">
+                                        <button
+                                            type="button"
+                                            className="btn btn-sm btn-outline-primary"
+                                            onClick={openAllFirstMirrors}
+                                        >
+                                            Open all videos in tabs
+                                        </button>
+                                        {openAllClickCount >= 2 && (
+                                            <div className="mt-2 small text-danger">If videos did not open, your browser's pop-up blocker likely prevented them. Enable pop-ups for this site and try refreshing.</div>
+                                        )}
+                                    </div>
+                                    <Accordion defaultActiveKey={activeId} flush className="fade-in">
+                                        {match.videos.map((v: any, i: number) => {
+                                            v.index = i;
+                                            return <Video id={`video${i}`} key={`video${i}`} video={v}/>;
+                                        })}
+                                    </Accordion>
+                                </>
+                            ) : (
+                                noVideos
+                            )}
+                        </>
+                    ) : (
+                        error !== null ? <ErrorMessage message={error} /> : <PuffLoader cssOverride={overrideSpinner} color="#00bc8c" />
+                    )}
                 </div>
             </div>
         </div>
