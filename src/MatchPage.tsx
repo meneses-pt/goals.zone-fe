@@ -162,13 +162,13 @@ const MatchPage = () => {
                                     <div className="mb-2">
                                         <button
                                             type="button"
-                                            className="btn btn-sm btn-outline-primary"
+                                            className="open-all-btn"
                                             onClick={openAllFirstMirrors}
                                         >
                                             Open all videos in tabs
                                         </button>
                                         {openAllClickCount >= 2 && (
-                                            <div className="mt-2 small text-danger">If videos did not open, your browser's pop-up blocker likely prevented them. Enable pop-ups for this site and try refreshing.</div>
+                                            <div className="open-all-warning">If videos did not open, your browser's pop-up blocker likely prevented them. Enable pop-ups for this site and try refreshing.</div>
                                         )}
                                     </div>
                                     <Accordion defaultActiveKey={activeId} flush className="fade-in">

@@ -2,3 +2,33 @@
     margin-top: 40px;
     margin-bottom: 20px
 }
+
+.open-all-btn {
+    background: #303030;
+    border: 1px solid #444;
+    color: #fff;
+    font-size: 90%;
+    padding: 6px 14px;
+    border-radius: 0.25rem;
+    transition: background 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+
+.open-all-btn:hover, .open-all-btn:focus {
+    background: #444;
+    color: #fff;
+    text-decoration: none;
+}
+
+.open-all-btn:active {
+    background: #222;
+}
+
+.open-all-warning {
+    margin-top: 8px;
+    font-size: 80%;
+    background: #282828;
+    padding: 6px 10px;
+    border-left: 4px solid #00bc8c;
+    border-radius: 4px;
+    color: #ccc;
+}
