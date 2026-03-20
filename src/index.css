@@ -576,10 +576,14 @@ a, button, .btn {
     margin-right: 5px;
     font-size: 90%;
     background: var(--gz-bg-score);
-    padding: 5px 8px 5px 8px;
+    padding: 5px 0;
     border-radius: var(--gz-radius-sm);
     margin-bottom: 5px;
     border: 1px solid var(--gz-border);
+    display: inline-block;
+    width: 2.5em;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .detail-score-desktop {
@@ -587,19 +591,27 @@ a, button, .btn {
     margin-left: 5px;
     font-size: 90%;
     background: var(--gz-bg-score);
-    padding: 5px 8px 5px 8px;
+    padding: 5px 0;
     border-radius: var(--gz-radius-sm);
     margin-bottom: 5px;
     border: 1px solid var(--gz-border);
+    display: inline-block;
+    width: 2.5em;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .list-score {
     margin-right: 5px;
     font-size: 90%;
     background: var(--gz-bg-score);
-    padding: 5px 8px 5px 8px;
+    padding: 5px 0;
     border-radius: var(--gz-radius-sm);
     border: 1px solid var(--gz-border);
+    display: inline-block;
+    width: 2.5em;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .list-score-desktop {
@@ -607,9 +619,13 @@ a, button, .btn {
     margin-left: 5px;
     font-size: 90%;
     background: var(--gz-bg-score);
-    padding: 5px 8px 5px 8px;
+    padding: 5px 0;
     border-radius: var(--gz-radius-sm);
     border: 1px solid var(--gz-border);
+    display: inline-block;
+    width: 2.5em;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 /* ===== BUTTONS ===== */

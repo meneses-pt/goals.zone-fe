@@ -10,8 +10,21 @@ const selectStylesForSelect = {
     menu: (base: any) => ({
         ...base,
         zIndex: 100,
-        border: `1px solid ${getVar("--gz-border") || "#2a2d3a"}`,
-        boxShadow: `0 8px 24px rgba(0, 0, 0, 0.25)`,
+        backgroundColor: getVar("--gz-bg-elevated") || "#222530",
+        border: `2px solid ${getVar("--gz-accent") || "#00bc8c"}`,
+        boxShadow: `0 12px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px ${getVar("--gz-accent-subtle") || "rgba(0, 188, 140, 0.15)"}`,
+        borderRadius: getVar("--gz-radius-md") || "0.75rem",
+        marginTop: "8px",
+        marginBottom: "8px",
+    }),
+    menuList: (base: any) => ({
+        ...base,
+        padding: "6px",
+    }),
+    option: (base: any) => ({
+        ...base,
+        backgroundColor: "transparent",
+        borderRadius: getVar("--gz-radius-sm") || "0.5rem",
     }),
     control: (base: any) => ({
         ...base,
