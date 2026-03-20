@@ -42,7 +42,7 @@ const Teams = () => {
     return (
         <>
             <div className="container-fluid">
-                <div className="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content bottom-margin top-padding">
+                <div className="col-12 col-md-9 col-xl-8 py-md-3 mx-auto bd-content bottom-margin top-padding">
                     <div className="container">
                         <ul className="list-group infinite-container fade-in">
                             <h3>Teams</h3>

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import {Accordion} from "react-bootstrap";
 import {useLocation, useParams} from "react-router-dom";
 import {PuffLoader} from "react-spinners";
@@ -15,6 +15,47 @@ const MatchPage = () => {
     const [activeId, setActiveId] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [openAllClickCount, setOpenAllClickCount] = useState(0); // 0 = not clicked, 1 = opened once, 2 = warning shown
+    const mobileHeaderRef = useRef<HTMLHeadingElement>(null);
+
+    useEffect(() => {
+        const h3 = mobileHeaderRef.current;
+        if (!matchLoaded || !h3) return;
+
+        const fit = () => {
+            const names = h3.querySelectorAll<HTMLElement>(".match-header-team-name");
+            if (names.length === 0) return;
+
+            // Reset to measure natural size
+            names.forEach(n => n.style.fontSize = "");
+            h3.style.overflow = "visible";
+            const defaultSize = parseFloat(getComputedStyle(names[0]).fontSize);
+            const containerWidth = h3.clientWidth;
+            if (containerWidth === 0) { h3.style.overflow = ""; return; }
+
+            const overflows = () => h3.scrollWidth > containerWidth;
+            if (!overflows()) { h3.style.overflow = ""; return; }
+
+            // Binary search for the largest name font size that fits
+            let lo = defaultSize * 0.45;
+            let hi = defaultSize;
+            while (hi - lo > 0.5) {
+                const mid = (lo + hi) / 2;
+                names.forEach(n => n.style.fontSize = mid + "px");
+                if (overflows()) {
+                    hi = mid;
+                } else {
+                    lo = mid;
+                }
+            }
+            names.forEach(n => n.style.fontSize = lo + "px");
+            h3.style.overflow = "";
+        };
+
+        fit();
+        const ro = new ResizeObserver(fit);
+        ro.observe(h3);
+        return () => ro.disconnect();
+    }, [matchLoaded]);
 
     // Collect first mirror URLs (dedupe to avoid duplicate tabs)
     const getFirstMirrorUrls = (): string[] => {
@@ -99,13 +140,13 @@ const MatchPage = () => {
     const header = (match: any) => (
         <>
             <div className="mobile">
-                <h3 className="small-header mobile">
+                <h3 className="small-header mobile" ref={mobileHeaderRef}>
                     <a className="team-link" href={`/teams/${match.home_team.slug}`}>
                         <img src={match.home_team.logo_file ?? badgePlaceholder}
                              alt={match.home_team.name}
                              className="img-fluid detail-img-thumb" width="30" height="30"/>
                         &nbsp;
-                        <span className="detail-score">{match.home_team_score ?? "-"}</span> {match.home_team.name}
+                        <span className="detail-score">{match.home_team_score ?? "-"}</span> <span className="match-header-team-name">{match.home_team.name}</span>
                     </a>
                     <br className="br-spacing"/>
                     <a className="team-link" href={`/teams/${match.away_team.slug}`}>
@@ -113,7 +154,7 @@ const MatchPage = () => {
                              alt={match.away_team.name}
                              className="img-fluid detail-img-thumb" width="30" height="30"/>
                         &nbsp;
-                        <span className="detail-score">{match.away_team_score ?? "-"}</span> {match.away_team.name}
+                        <span className="detail-score">{match.away_team_score ?? "-"}</span> <span className="match-header-team-name">{match.away_team.name}</span>
                     </a>
                     <br/>
                 </h3>
@@ -151,7 +192,7 @@ const MatchPage = () => {
 
     return <>
         <div className="container-fluid">
-            <div className="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content bottom-margin top-padding">
+            <div className="col-12 col-md-9 col-xl-8 py-md-3 mx-auto bd-content bottom-margin top-padding">
                 <div className="container">
                     {matchLoaded ? (
                         <>

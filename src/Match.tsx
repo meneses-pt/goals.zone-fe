@@ -1,4 +1,4 @@
-import React, {forwardRef} from "react";
+import React, {forwardRef, useEffect, useRef} from "react";
 import {badgePlaceholder} from "./constants";
 import "./Match.css";
 import {
@@ -9,6 +9,38 @@ import {
 } from "./utils/utils";
 
 const Match = forwardRef<any, any>(({match, showDate, withYear = false}, ref) => {
+    const homeNameRef = useRef<HTMLElement>(null);
+    const awayNameRef = useRef<HTMLElement>(null);
+    const resultRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const home = homeNameRef.current;
+        const away = awayNameRef.current;
+        const container = resultRef.current;
+        if (!home || !away || !container) return;
+
+        // Reset font size to measure natural width
+        home.style.fontSize = "";
+        away.style.fontSize = "";
+
+        const available = container.clientWidth;
+        const getRowWidth = (el: HTMLElement) => {
+            const row = el.closest(".mobile-team-row") as HTMLElement | null;
+            return row ? row.scrollWidth : 0;
+        };
+
+        const homeOverflow = getRowWidth(home) - available;
+        const awayOverflow = getRowWidth(away) - available;
+        const maxOverflow = Math.max(homeOverflow, awayOverflow);
+
+        if (maxOverflow > 0) {
+            const scale = Math.max(0.65, available / (available + maxOverflow));
+            const size = `${scale}em`;
+            home.style.fontSize = size;
+            away.style.fontSize = size;
+        }
+    }, [match.home_team.name, match.away_team.name]);
+
     const matchBody = (
         <>
             {
@@ -32,29 +64,29 @@ const Match = forwardRef<any, any>(({match, showDate, withYear = false}, ref) =>
                             {convertToLocalHourStr(match.datetime)}
                         </span>
                     </div>
-                    <div className="list-match-result">
-                        <img
-                            src={match.home_team.logo_file ?? badgePlaceholder}
-                            alt={match.home_team.name}
-                            className="img-fluid detail-img-thumb"
-                            width="30"
-                            height="30"
-                        />
-                        &nbsp;
-                        <span className="list-score">{match.home_team_score ?? "-"}</span>
-                        <b>{match.home_team.name} </b>
-                        <br/>
-                        <img
-                            src={match.away_team.logo_file ?? badgePlaceholder}
-                            alt={match.away_team.name}
-                            className="img-fluid detail-img-thumb"
-                            width="30"
-                            height="30"
-                        />
-                        &nbsp;
-                        <span className="list-score">{match.away_team_score ?? "-"}</span>
-                        <b>{match.away_team.name} </b>
-                        <br/>
+                    <div className="list-match-result" ref={resultRef}>
+                        <div className="mobile-team-row">
+                            <img
+                                src={match.home_team.logo_file ?? badgePlaceholder}
+                                alt={match.home_team.name}
+                                className="img-fluid detail-img-thumb"
+                                width="30"
+                                height="30"
+                            />
+                            <span className="list-score">{match.home_team_score ?? "-"}</span>
+                            <b ref={homeNameRef} className="mobile-team-name">{match.home_team.name}</b>
+                        </div>
+                        <div className="mobile-team-row">
+                            <img
+                                src={match.away_team.logo_file ?? badgePlaceholder}
+                                alt={match.away_team.name}
+                                className="img-fluid detail-img-thumb"
+                                width="30"
+                                height="30"
+                            />
+                            <span className="list-score">{match.away_team_score ?? "-"}</span>
+                            <b ref={awayNameRef} className="mobile-team-name">{match.away_team.name}</b>
+                        </div>
                     </div>
                 </a>
             </div>

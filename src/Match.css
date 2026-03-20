@@ -37,6 +37,10 @@
     background: var(--gz-bg-body);
 }
 
+.small-header.mobile .team-link {
+    white-space: nowrap;
+}
+
 .open-all-warning {
     margin-top: 8px;
     font-size: 80%;

@@ -422,6 +422,28 @@ a, button, .btn {
     vertical-align: top;
     margin-top: 25px;
     margin-right: 15px;
+    width: 3.5em;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.list-match-result {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    flex: 1;
+    gap: 4px;
+}
+
+.mobile-team-row {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.mobile-team-name {
+    white-space: nowrap;
 }
 
 .list-hour-desktop {
@@ -434,9 +456,6 @@ a, button, .btn {
     vertical-align: bottom;
 }
 
-.list-match-result {
-    display: inline-block;
-}
 
 /* Desktop: scoreboard layout with centered scores */
 .list-match-row {
