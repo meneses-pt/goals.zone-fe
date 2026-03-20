@@ -112,8 +112,6 @@
 
 .list-group-item:hover {
     z-index: 0;
-    transform: translateY(-2px);
-    box-shadow: var(--gz-shadow-card-hover);
 }
 
 .list-group-item-action:hover,
@@ -169,6 +167,11 @@
 [data-theme="light"] .list-group-item-action:focus {
     background-color: var(--gz-bg-surface-hover) !important;
     color: var(--gz-text-primary) !important;
+}
+
+[data-theme="light"] .list-match-row.list-group-item:hover,
+[data-theme="light"] .list-group-flex.list-group-item:hover {
+    border-left-color: var(--gz-accent) !important;
 }
 
 [data-theme="light"] .btn-success {
@@ -439,6 +442,72 @@ a, button, .btn {
 .list-match-row {
     display: flex !important;
     align-items: center;
+}
+
+/* Grouped match rows: no individual rounding, connected by borders */
+.list-match-row.list-group-item {
+    border-radius: 0 !important;
+    margin-bottom: 0 !important;
+    border-bottom: 1px solid var(--gz-border);
+}
+
+/* First of day: round top corners */
+.list-match-row.match-first {
+    border-top-left-radius: var(--gz-radius-md) !important;
+    border-top-right-radius: var(--gz-radius-md) !important;
+}
+
+/* Last of day: round bottom corners, gap after group */
+.list-match-row.match-last {
+    border-bottom-left-radius: var(--gz-radius-md) !important;
+    border-bottom-right-radius: var(--gz-radius-md) !important;
+    border-bottom: none;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Match row hover: accent bar + background change */
+.list-match-row.list-group-item {
+    border-left: 3px solid transparent;
+    transition: border-color var(--gz-transition-fast), background-color var(--gz-transition-fast);
+}
+
+.list-match-row.list-group-item:hover {
+    transform: none;
+    box-shadow: var(--gz-shadow-card);
+    background-color: var(--gz-bg-surface-hover);
+    border-left-color: var(--gz-accent);
+}
+
+/* Grouped mobile match rows */
+.list-group-flex.list-group-item {
+    border-radius: 0 !important;
+    margin-bottom: 0 !important;
+    border-bottom: 1px solid var(--gz-border);
+}
+
+.list-group-flex.match-first {
+    border-top-left-radius: var(--gz-radius-md) !important;
+    border-top-right-radius: var(--gz-radius-md) !important;
+}
+
+.list-group-flex.match-last {
+    border-bottom-left-radius: var(--gz-radius-md) !important;
+    border-bottom-right-radius: var(--gz-radius-md) !important;
+    border-bottom: none;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Mobile match hover: accent bar + background change */
+.list-group-flex.list-group-item {
+    border-left: 3px solid transparent;
+    transition: border-color var(--gz-transition-fast), background-color var(--gz-transition-fast);
+}
+
+.list-group-flex.list-group-item:hover {
+    transform: none;
+    box-shadow: var(--gz-shadow-card);
+    background-color: var(--gz-bg-surface-hover);
+    border-left-color: var(--gz-accent);
 }
 
 .list-match-home {

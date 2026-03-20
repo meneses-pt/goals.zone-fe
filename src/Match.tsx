@@ -23,7 +23,7 @@ const Match = forwardRef<any, any>(({match, showDate, withYear = false}, ref) =>
                 </div>
             }
             <div className="mobile">
-                <a className="list-group-item list-group-item-action list-group-flex" href={`/${match.slug}`}>
+                <a className={`list-group-item list-group-item-action list-group-flex${match.showDateSeparator ? " match-first" : ""}${match.isLastOfDay ? " match-last" : ""}`} href={`/${match.slug}`}>
                     <div className="list-hour-mobile">
                         {showDate && <>
                             <span className="no-wrap">{convertToDateStr(match.datetime, withYear)}</span><br/>
@@ -59,7 +59,7 @@ const Match = forwardRef<any, any>(({match, showDate, withYear = false}, ref) =>
                 </a>
             </div>
             <div className="desktop">
-                <a className="list-group-item list-group-item-action list-match-row" href={`/${match.slug}`}>
+                <a className={`list-group-item list-group-item-action list-match-row${match.showDateSeparator ? " match-first" : ""}${match.isLastOfDay ? " match-last" : ""}`} href={`/${match.slug}`}>
                     <div className={`list-hour-desktop ${showDate ? "show-date" : ""}`}>
                         {showDate && <>
                             <span className="no-wrap">{convertToDateStr(match.datetime, withYear)}</span><br/>
@@ -69,6 +69,7 @@ const Match = forwardRef<any, any>(({match, showDate, withYear = false}, ref) =>
                         </span>
                     </div>
                     <div className="list-match-home">
+                        <b>{match.home_team.name}</b>
                         <img
                             src={match.home_team.logo_file ?? badgePlaceholder}
                             alt={match.home_team.name}
@@ -76,7 +77,6 @@ const Match = forwardRef<any, any>(({match, showDate, withYear = false}, ref) =>
                             width="30"
                             height="30"
                         />
-                        <b>{match.home_team.name}</b>
                     </div>
                     <div className="list-match-score">
                         <span className="list-score-desktop">{match.home_team_score ?? "-"}</span>
@@ -84,7 +84,6 @@ const Match = forwardRef<any, any>(({match, showDate, withYear = false}, ref) =>
                         <span className="list-score-desktop">{match.away_team_score ?? "-"}</span>
                     </div>
                     <div className="list-match-away">
-                        <b>{match.away_team.name}</b>
                         <img
                             src={match.away_team.logo_file ?? badgePlaceholder}
                             alt={match.away_team.name}
@@ -92,6 +91,7 @@ const Match = forwardRef<any, any>(({match, showDate, withYear = false}, ref) =>
                             width="30"
                             height="30"
                         />
+                        <b>{match.away_team.name}</b>
                     </div>
                 </a>
             </div>

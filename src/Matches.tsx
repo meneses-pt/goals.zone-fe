@@ -37,6 +37,8 @@ const Matches = () => {
     const content = results.map((match, i) => {
         let currentMatchDate = convertToDateStr(match.datetime);
         match.showDateSeparator = lastMatchDate === null || lastMatchDate !== currentMatchDate;
+        let nextDate = i + 1 < results.length ? convertToDateStr(results[i + 1].datetime) : null;
+        match.isLastOfDay = nextDate === null || nextDate !== currentMatchDate;
         lastMatchDate = currentMatchDate;
         if (results.length === i + 10) { // 10 records before the end
             return <Match ref={lastMatchRef} key={match.id} match={match}/>;

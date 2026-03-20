@@ -8,11 +8,13 @@
     margin-bottom: -1px;
     background-color: var(--gz-bg-surface);
     border: 1px solid var(--gz-border);
-    transition: background-color var(--gz-transition-fast);
+    border-left: 3px solid transparent;
+    transition: background-color var(--gz-transition-fast), border-color var(--gz-transition-fast);
 }
 
 .video .accordion-button:hover {
     background-color: var(--gz-bg-surface-hover);
+    border-left-color: var(--gz-accent);
 }
 
 .accordion-button:focus {
