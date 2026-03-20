@@ -5,18 +5,21 @@ import MatchPage from "./MatchPage";
 import Nav from "./Nav";
 import TeamPage from "./TeamPage";
 import Teams from "./Teams";
+import {ThemeProvider} from "./ThemeContext";
 
 function App() {
 
-    return <BrowserRouter>
-        <Nav/>
-        <Routes>
-            <Route path="/" element={<Matches/>}/>
-            <Route path="/:slug" element={<MatchPage/>}/>
-            <Route path="teams" element={<Teams/>}/>
-            <Route path="teams/:slug" element={<TeamPage/>}/>
-        </Routes>
-    </BrowserRouter>;
+    return <ThemeProvider>
+        <BrowserRouter>
+            <Nav/>
+            <Routes>
+                <Route path="/" element={<Matches/>}/>
+                <Route path="/:slug" element={<MatchPage/>}/>
+                <Route path="teams" element={<Teams/>}/>
+                <Route path="teams/:slug" element={<TeamPage/>}/>
+            </Routes>
+        </BrowserRouter>
+    </ThemeProvider>;
 }
 
 export default App;

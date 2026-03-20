@@ -3,8 +3,8 @@
 }
 
 .accordion-button:not(.collapsed) {
-    color: #00bc8c;
-    background-color: #444;
+    color: var(--gz-accent);
+    background-color: var(--gz-bg-expanded);
 }
 
 .accordion-button:not(.collapsed)::after {
@@ -14,8 +14,9 @@
 .accordion-button {
     padding: 0.75rem 1.25rem;
     margin-bottom: 0;
-    background-color: #444;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: var(--gz-bg-expanded);
+    border-bottom: 1px solid var(--gz-border);
+    transition: background-color var(--gz-transition-fast), color var(--gz-transition-fast);
 }
 
 .info-accordion .accordion-body {

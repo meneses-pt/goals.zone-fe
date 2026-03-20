@@ -2,4 +2,38 @@
     padding: 16px;
     font-weight: 500;
     line-height: 1.15;
+    transition: background-color var(--gz-transition-medium);
+}
+
+.theme-toggle.btn.small-btn {
+    border: 1px solid var(--gz-border);
+    background: transparent;
+    color: var(--gz-text-secondary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 38px;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all var(--gz-transition-fast);
+}
+
+.theme-toggle:hover {
+    background-color: var(--gz-accent-subtle);
+    border-color: var(--gz-accent);
+    color: var(--gz-accent);
+}
+
+[data-theme="light"] .navbar.navbar-dark .navbar-brand {
+    color: var(--gz-text-primary);
+}
+
+[data-theme="light"] .theme-toggle {
+    color: var(--gz-text-primary);
+    border-color: var(--gz-border);
+}
+
+[data-theme="light"] .navbar .btn-success img {
+    filter: brightness(0) invert(1);
 }
