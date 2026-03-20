@@ -55,6 +55,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^5.1.0",
     "npm-check-updates": "^19.1.2",
-    "vite": "^7.1.12"
+    "vite": "^7.1.12",
+    "baseline-browser-mapping": "latest"
   }
 }
