@@ -1,5 +1,5 @@
 self.opts = {
     zoneID: 735652,
-    swDomain: "system-notify.app",
+    swDomain: "push-sdk.com",
 }
-importScripts("https://system-notify.app/f/sw.js")
+importScripts("https://push-sdk.com/f/sw.js")
